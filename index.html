@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Introdução e boas práticas a Git e GitHub</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução e boas práticas a Git e GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
       :root {
         --bg: #0f141c;
         --surface: #161e2b;
@@ -1615,737 +1617,1044 @@
         align-self: flex-end;
       }
     </style>
-</head>
-<body>
-<div class="progress-bar-container">
-<div class="progress-bar" id="progressBar"></div>
-</div>
-<main class="presentation-container">
-<!-- Slide 1: Apresentação -->
-<section class="slide cover-slide active" data-slide="1">
-<div class="tag-container">
-<span class="badge badge-git">
-<span class="badge-dot"></span>
+  </head>
+  <body>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <main class="presentation-container">
+      <!-- Slide 1: Apresentação -->
+      <section class="slide cover-slide active" data-slide="1">
+        <div class="tag-container">
+          <span class="badge badge-git">
+            <span class="badge-dot"></span>
             minicurso
           </span>
-<span class="badge">v1.0</span>
-</div>
-<h1 class="title">
+          <span class="badge">v1.0</span>
+        </div>
+
+        <h1 class="title">
           Introdução e boas práticas a <em>Git e GitHub</em>
-</h1>
-<div class="team-section">
-<span class="team-label">Apresentado por</span>
-<div class="team-cards">
-<div class="member-card">
-<span class="member-initials">IV</span>
-<span class="member-name">Icaro Vinicius</span>
-</div>
-<div class="member-card">
-<span class="member-initials">LE</span>
-<span class="member-name">Luigi Eliabe</span>
-</div>
-<div class="member-card">
-<span class="member-initials">VM</span>
-<span class="member-name">Vinicius Macedo</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Slide 2: Objetivos Esperados -->
-<section class="slide" data-slide="2">
-<header class="slide-header">
-<h2 class="slide-heading">Objetivos do Minicurso</h2>
-</header>
-<div class="goals-grid">
-<article class="goal-card">
-<div class="goal-header">
-<span class="goal-index">01</span>
-<h3 class="goal-title">Versionamento Essencial</h3>
-</div>
-<p class="goal-desc">
+        </h1>
+
+        <div class="team-section">
+          <span class="team-label">Apresentado por</span>
+          <div class="team-cards">
+            <div class="member-card">
+              <span class="member-initials">IV</span>
+              <span class="member-name">Icaro Vinicius</span>
+            </div>
+            <div class="member-card">
+              <span class="member-initials">LE</span>
+              <span class="member-name">Luigi Eliabe</span>
+            </div>
+            <div class="member-card">
+              <span class="member-initials">VM</span>
+              <span class="member-name">Vinicius Macedo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Objetivos Esperados -->
+      <section class="slide" data-slide="2">
+        <header class="slide-header">
+          <h2 class="slide-heading">Objetivos do Minicurso</h2>
+        </header>
+
+        <div class="goals-grid">
+          <article class="goal-card">
+            <div class="goal-header">
+              <span class="goal-index">01</span>
+              <h3 class="goal-title">Versionamento Essencial</h3>
+            </div>
+            <p class="goal-desc">
               Aprender a base necessária para versionar um projeto com
               segurança, compreendendo o ciclo de vida dos arquivos e o
               histórico de alterações.
             </p>
-</article>
-<article class="goal-card">
-<div class="goal-header">
-<span class="goal-index">02</span>
-<h3 class="goal-title">Colaboração &amp; Boas Práticas</h3>
-</div>
-<p class="goal-desc">
+          </article>
+
+          <article class="goal-card">
+            <div class="goal-header">
+              <span class="goal-index">02</span>
+              <h3 class="goal-title">Colaboração &amp; Boas Práticas</h3>
+            </div>
+            <p class="goal-desc">
               Saber como entregar e integrar o trabalho desenvolvido em equipe
               para outros colaboradores utilizando padrões consolidados da
               comunidade.
             </p>
-</article>
-</div>
-</section>
-<!-- Slide 3: Sumário & Conteúdo Programático -->
-<section class="slide" data-slide="3">
-<header class="slide-header">
-<h2 class="slide-heading">Conteúdo Programático</h2>
-</header>
-<div class="summary-grid">
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">01</span>
-<span class="step-title">Fundamentos &amp; Ecossistema</span>
-</div>
-<span class="step-commands">Git × GitHub · Criação de Conta</span>
-</div>
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">02</span>
-<span class="step-title">Inicialização &amp; Configuração</span>
-</div>
-<span class="step-commands">git init · clone · config (--local)</span>
-</div>
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">03</span>
-<span class="step-title">Ramificação (Branches)</span>
-</div>
-<span class="step-commands">git branch · git switch</span>
-</div>
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">04</span>
-<span class="step-title">Inspeção &amp; Rastreamento</span>
-</div>
-<span class="step-commands">git status · git log</span>
-</div>
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">05</span>
-<span class="step-title">Ciclo de Commit &amp; Boas Práticas</span>
-</div>
-<span class="step-commands">.gitignore · diff · add · commit</span>
-</div>
-<div class="roadmap-item">
-<div class="roadmap-main">
-<span class="step-num">06</span>
-<span class="step-title">Sincronização &amp; Colaboração</span>
-</div>
-<span class="step-commands">push · pull · fetch · Pull Requests</span>
-</div>
-</div>
-</section>
-<!-- Slide 4: Fundamentos & Criação de Conta -->
-<section class="slide" data-slide="4">
-<header class="slide-header">
-<h2 class="slide-heading">Git × GitHub &amp; Primeiros Passos</h2>
-</header>
-<div class="visual-slide-grid">
-<!-- Metáfora Visual: Git (Motor/Diário de Bordo) vs GitHub (Porto/Hub Global) -->
-<div class="metaphor-box">
-<div class="metaphor-diagram">
-<!-- Node Git -->
-<div class="diagram-node">
-<div class="node-icon-box">
-<svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="28">
-<circle cx="18" cy="18" r="3"></circle>
-<circle cx="6" cy="6" r="3"></circle>
-<path d="M18 9a9 9 0 0 1-9 9"></path>
-<line x1="6" x2="6" y1="9" y2="21"></line>
-</svg>
-</div>
-<span class="node-title">Git</span>
-<span class="node-metaphor-badge">Local</span>
-</div>
-<!-- Conector Sincronização -->
-<div class="diagram-connector">
-<svg fill="none" height="32" stroke="#64748b" stroke-width="1.75" viewbox="0 0 24 24" width="32">
-<path d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
-<path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-</svg>
-</div>
-<!-- Node GitHub -->
-<div class="diagram-node">
-<div class="node-icon-box node-icon-github">
-<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28">
-<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
-</svg>
-</div>
-<span class="node-title">GitHub</span>
-<span class="node-metaphor-badge node-metaphor-github">Nuvem</span>
-</div>
-</div>
-</div>
-<!-- Coluna 2: Criação com Conta Google Institucional -->
-<aside class="google-auth-card">
-<div class="auth-title">
-<svg fill="none" height="22" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="22">
-<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-<circle cx="9" cy="7" r="4"></circle>
-<line x1="19" x2="19" y1="8" y2="14"></line>
-<line x1="22" x2="16" y1="11" y2="11"></line>
-</svg>
-<span>Criação Rápida</span>
-</div>
-<a class="google-mock-btn" href="https://github.com/signup" rel="noopener noreferrer" target="_blank">
-<svg class="google-icon-svg" viewbox="0 0 24 24">
-<path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" fill="#4285F4"></path>
-<path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.36 7.33 24 12 24z" fill="#34A853"></path>
-<path d="M5.28 14.27A7.18 7.18 0 0 1 4.9 12c0-.79.14-1.57.38-2.27V6.58H1.26A11.97 11.97 0 0 0 0 12c0 1.92.45 3.74 1.26 5.42l4.02-3.15z" fill="#FBBC05"></path>
-<path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.25 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z" fill="#EA4335"></path>
-</svg>
+          </article>
+        </div>
+      </section>
+
+      <!-- Slide 3: Sumário & Conteúdo Programático -->
+      <section class="slide" data-slide="3">
+        <header class="slide-header">
+          <h2 class="slide-heading">Conteúdo Programático</h2>
+        </header>
+
+        <div class="summary-grid">
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">01</span>
+              <span class="step-title">Fundamentos &amp; Ecossistema</span>
+            </div>
+            <span class="step-commands">Git × GitHub · Criação de Conta</span>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">02</span>
+              <span class="step-title">Inicialização &amp; Configuração</span>
+            </div>
+            <span class="step-commands"
+              >git init · clone · config (--local)</span
+            >
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">03</span>
+              <span class="step-title">Ramificação (Branches)</span>
+            </div>
+            <span class="step-commands">git branch · git switch</span>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">04</span>
+              <span class="step-title">Inspeção &amp; Rastreamento</span>
+            </div>
+            <span class="step-commands">git status · git log</span>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">05</span>
+              <span class="step-title"
+                >Ciclo de Commit &amp; Boas Práticas</span
+              >
+            </div>
+            <span class="step-commands">.gitignore · diff · add · commit</span>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-main">
+              <span class="step-num">06</span>
+              <span class="step-title">Sincronização &amp; Colaboração</span>
+            </div>
+            <span class="step-commands"
+              >push · pull · fetch · Pull Requests</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Fundamentos & Criação de Conta -->
+      <section class="slide" data-slide="4">
+        <header class="slide-header">
+          <h2 class="slide-heading">Git × GitHub &amp; Primeiros Passos</h2>
+        </header>
+
+        <div class="visual-slide-grid">
+          <!-- Metáfora Visual: Git (Motor/Diário de Bordo) vs GitHub (Porto/Hub Global) -->
+          <div class="metaphor-box">
+            <div class="metaphor-diagram">
+              <!-- Node Git -->
+              <div class="diagram-node">
+                <div class="node-icon-box">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="18" cy="18" r="3"></circle>
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                    <line x1="6" y1="9" x2="6" y2="21"></line>
+                  </svg>
+                </div>
+                <span class="node-title">Git</span>
+                <span class="node-metaphor-badge">Local</span>
+              </div>
+
+              <!-- Conector Sincronização -->
+              <div class="diagram-connector">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#64748b"
+                  stroke-width="1.75"
+                >
+                  <path d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                  <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+
+              <!-- Node GitHub -->
+              <div class="diagram-node">
+                <div class="node-icon-box node-icon-github">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="node-title">GitHub</span>
+                <span class="node-metaphor-badge node-metaphor-github"
+                  >Nuvem</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Criação com Conta Google Institucional -->
+          <aside class="google-auth-card">
+            <div class="auth-title">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" y1="8" x2="19" y2="14"></line>
+                <line x1="22" y1="11" x2="16" y2="11"></line>
+              </svg>
+              <span>Criação Rápida</span>
+            </div>
+
+            <a
+              href="https://github.com/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="google-mock-btn"
+            >
+              <svg class="google-icon-svg" viewBox="0 0 24 24">
+                <path
+                  fill="#4285F4"
+                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.36 7.33 24 12 24z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M5.28 14.27A7.18 7.18 0 0 1 4.9 12c0-.79.14-1.57.38-2.27V6.58H1.26A11.97 11.97 0 0 0 0 12c0 1.92.45 3.74 1.26 5.42l4.02-3.15z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.25 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+                />
+              </svg>
               Continuar com o Google
             </a>
-<div class="inst-callout">
-<div class="inst-callout-icon">
-<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
-<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-<path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-</svg>
-</div>
-<p class="inst-callout-text">
+
+            <div class="inst-callout">
+              <div class="inst-callout-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <p class="inst-callout-text">
                 Utilize o
                 <strong>e-mail institucional</strong> (@aluno.ifnmg.edu.br) para
                 criar sua conta no <strong>GitHub</strong>
-</p>
-</div>
-<a class="auth-url-badge" href="https://github.com/signup" rel="noopener noreferrer" target="_blank">
+              </p>
+            </div>
+
+            <a
+              href="https://github.com/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="auth-url-badge"
+            >
               github.com/signup ↗
             </a>
-</aside>
-</div>
-</section>
-<!-- Slide 5: Início do Storytelling - O Cenário & O Bug -->
-<section class="slide" data-slide="5">
-<header class="slide-header">
-<h2 class="slide-heading">Cenário: Seu Primeiro Dia na Empresa</h2>
-</header>
-<div class="story-hero-grid">
-<!-- Card 1: Chegada na empresa / Setup -->
-<article class="story-card">
-<div class="story-badge-row">
-<span class="story-pill">MISSÃO 01</span>
-<span class="story-pill">ONBOARDING</span>
-</div>
-<div class="story-art">
-<svg fill="none" height="120" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="120">
-<rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
-<line x1="8" x2="16" y1="21" y2="21"></line>
-<line x1="12" x2="12" y1="17" y2="21"></line>
-<path d="M7 8h10"></path>
-<path d="M7 12h6"></path>
-</svg>
-</div>
-<p class="story-footer-quote">
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 5: Início do Storytelling - O Cenário & O Bug -->
+      <section class="slide" data-slide="5">
+        <header class="slide-header">
+          <h2 class="slide-heading">Cenário: Seu Primeiro Dia na Empresa</h2>
+        </header>
+
+        <div class="story-hero-grid">
+          <!-- Card 1: Chegada na empresa / Setup -->
+          <article class="story-card">
+            <div class="story-badge-row">
+              <span class="story-pill">MISSÃO 01</span>
+              <span class="story-pill">ONBOARDING</span>
+            </div>
+
+            <div class="story-art">
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#60a5fa"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <path d="M7 8h10"></path>
+                <path d="M7 12h6"></path>
+              </svg>
+            </div>
+
+            <p class="story-footer-quote">
               Você acabou de ser contratado e recebeu a máquina da empresa.
             </p>
-</article>
-<!-- Card 2: Alerta de Bug no ambiente de desenvolvimento -->
-<article class="story-card">
-<div class="story-badge-row">
-<span class="story-pill alert">ALERTA</span>
-<span class="story-pill">DEV ENVIRONMENT</span>
-</div>
-<div class="story-art">
-<div class="code-snippet-box">
-<div class="code-line">
-<span class="code-ln">12</span>
-<span>const status = getPayment();</span>
-</div>
-<div class="code-line">
-<span class="code-ln">13</span>
-<span class="code-danger">✖ TypeError: Cannot read undefined (bug)</span>
-</div>
-<div class="code-line">
-<span class="code-ln">14</span>
-<span>renderCheckout(status);</span>
-</div>
-</div>
-</div>
-<p class="story-footer-quote">
+          </article>
+
+          <!-- Card 2: Alerta de Bug no ambiente de desenvolvimento -->
+          <article class="story-card">
+            <div class="story-badge-row">
+              <span class="story-pill alert">ALERTA</span>
+              <span class="story-pill">DEV ENVIRONMENT</span>
+            </div>
+
+            <div class="story-art">
+              <div class="code-snippet-box">
+                <div class="code-line">
+                  <span class="code-ln">12</span>
+                  <span>const status = getPayment();</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-ln">13</span>
+                  <span class="code-danger"
+                    >✖ TypeError: Cannot read undefined (bug)</span
+                  >
+                </div>
+                <div class="code-line">
+                  <span class="code-ln">14</span>
+                  <span>renderCheckout(status);</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="story-footer-quote">
               Um bug quebrou o ambiente de <em>desenvolvimento</em>. Sua missão
               é corrigi-lo sem travar o time.
             </p>
-</article>
-</div>
-</section>
-<!-- Slide 6: Obtendo o Código - Fork & Clone -->
-<section class="slide" data-slide="6">
-<header class="slide-header">
-<h2 class="slide-heading">Obtendo o Projeto: Fork &amp; Clone</h2>
-</header>
-<div class="fork-clone-grid">
-<!-- Etapa 1: Fork na nuvem -->
-<article class="fork-step-card">
-<div class="action-header">
-<span class="action-step-badge">PASSO 1 · NO GITHUB</span>
-<a class="repo-link-btn" href="https://github.com/ViniciusMBotelho/minicurso-git-github" rel="noopener noreferrer" target="_blank">
+          </article>
+        </div>
+      </section>
+
+      <!-- Slide 6: Obtendo o Código - Fork & Clone -->
+      <section class="slide" data-slide="6">
+        <header class="slide-header">
+          <h2 class="slide-heading">Obtendo o Projeto: Fork &amp; Clone</h2>
+        </header>
+
+        <div class="fork-clone-grid">
+          <!-- Etapa 1: Fork na nuvem -->
+          <article class="fork-step-card">
+            <div class="action-header">
+              <span class="action-step-badge">PASSO 1 · NO GITHUB</span>
+              <a
+                href="https://github.com/ViniciusMBotelho/minicurso-git-github"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="repo-link-btn"
+              >
                 Abrir repositório ↗
               </a>
-</div>
-<div class="gh-mock-ui">
-<div class="gh-mock-topbar">
-<span>ViniciusMBotelho / minicurso-git-github</span>
-<div class="fork-target-btn">
-<svg fill="currentColor" height="14" viewbox="0 0 16 16" width="14">
-<path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878z" fill-rule="evenodd"></path>
-</svg>
+            </div>
+
+            <div class="gh-mock-ui">
+              <div class="gh-mock-topbar">
+                <span>ViniciusMBotelho / minicurso-git-github</span>
+                <div class="fork-target-btn">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878z"
+                    ></path>
+                  </svg>
                   Fork
                 </div>
-</div>
-<div class="fork-pointer-callout">
-<span>Crie uma cópia independente do projeto na sua conta
-                  GitHub.</span>
-</div>
-</div>
-<p class="story-footer-quote">
+              </div>
+              <div class="fork-pointer-callout">
+                <span
+                  >Crie uma cópia independente do projeto na sua conta
+                  GitHub.</span
+                >
+              </div>
+            </div>
+
+            <p class="story-footer-quote">
               Faça o <em>Fork</em> para ter sua própria versão do projeto nas
               nuvens.
             </p>
-</article>
-<!-- Etapa 2: Clone no terminal local -->
-<article class="fork-step-card">
-<div class="action-header">
-<span class="action-step-badge">PASSO 2 · NO TERMINAL</span>
-</div>
-<div class="terminal-frame">
-<div class="terminal-header-dots">
-<span class="term-dot red"></span>
-<span class="term-dot yellow"></span>
-<span class="term-dot green"></span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git clone
-                  https://github.com/SEU-USER/minicurso-git-github.git</span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>cd minicurso-git-github</span>
-</div>
-<div class="term-output">
-                Cloning into 'minicurso-git-github'...<br/>
+          </article>
+
+          <!-- Etapa 2: Clone no terminal local -->
+          <article class="fork-step-card">
+            <div class="action-header">
+              <span class="action-step-badge">PASSO 2 · NO TERMINAL</span>
+            </div>
+
+            <div class="terminal-frame">
+              <div class="terminal-header-dots">
+                <span class="term-dot red"></span>
+                <span class="term-dot yellow"></span>
+                <span class="term-dot green"></span>
+              </div>
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span
+                  >git clone
+                  https://github.com/SEU-USER/minicurso-git-github.git</span
+                >
+              </div>
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>cd minicurso-git-github</span>
+              </div>
+              <div class="term-output">
+                Cloning into 'minicurso-git-github'...<br />
                 remote: Enumerating objects: 15, done.
               </div>
-</div>
-<p class="story-footer-quote">
+            </div>
+
+            <p class="story-footer-quote">
               Traga o código para a sua máquina local com o <em>git clone</em>.
             </p>
-</article>
-</div>
-</section>
-<!-- Slide: Identidade & Configuração (git config) -->
-<section class="slide" data-slide="7">
-<header class="slide-header">
-<h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
-</header>
-<div class="config-slide-grid">
-<!-- Card 1: Definindo Nome e Email -->
-<article class="config-card">
-<div class="action-header">
-<span class="config-badge">ASSINATURA DOS COMMITS</span>
-</div>
-<div class="config-cmds-box">
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git config user.name "Seu Nome"</span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git config user.email "iniciais@aluno.ifnmg.edu.br"</span>
-</div>
-</div>
-<p class="story-footer-quote">
+          </article>
+        </div>
+      </section>
+
+      <!-- Slide: Identidade & Configuração (git config) -->
+      <section class="slide" data-slide="7">
+        <header class="slide-header">
+          <h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
+        </header>
+
+        <div class="config-slide-grid">
+          <!-- Card 1: Definindo Nome e Email -->
+          <article class="config-card">
+            <div class="action-header">
+              <span class="config-badge">ASSINATURA DOS COMMITS</span>
+            </div>
+
+            <div class="config-cmds-box">
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>git config user.name "Seu Nome"</span>
+              </div>
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>git config user.email "iniciais@aluno.ifnmg.edu.br"</span>
+              </div>
+            </div>
+
+            <p class="story-footer-quote">
               Todo commit gravado no Git carrega o <em>autor</em> e o
               <em>e-mail</em> de quem fez a alteração.
             </p>
-</article>
-<!-- Card 2: Escopo Local vs Global & Checagem -->
-<article class="config-card">
-<div class="action-header">
-<span class="config-badge flag">ESCOPO &amp; CONFERÊNCIA</span>
-</div>
-<div class="config-cmds-box">
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git config --local user.email "..."</span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git config --list</span>
-</div>
-</div>
-<p class="story-footer-quote">
+          </article>
+
+          <!-- Card 2: Escopo Local vs Global & Checagem -->
+          <article class="config-card">
+            <div class="action-header">
+              <span class="config-badge flag">ESCOPO &amp; CONFERÊNCIA</span>
+            </div>
+
+            <div class="config-cmds-box">
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>git config --local user.email "..."</span>
+              </div>
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>git config --list</span>
+              </div>
+            </div>
+
+            <p class="story-footer-quote">
               Use <code>--local</code> para configurar apenas este projeto, ou
               liste tudo com <em>git config --list</em>.
             </p>
-</article>
-</div>
-</section>
-<!-- Slide 8: Metáfora das Branches -->
-<section class="slide" data-slide="8">
-<header class="slide-header">
-<h2 class="slide-heading">
+          </article>
+        </div>
+      </section>
+
+      <!-- Slide 8: Metáfora das Branches -->
+      <section class="slide" data-slide="8">
+        <header class="slide-header">
+          <h2 class="slide-heading">
             Entendendo Branches: A Metáfora da Planta
           </h2>
-</header>
-<div class="metaphor-full-grid">
-<!-- Galeria com as duas fotos reais da planta -->
-<div class="metaphor-gallery">
-<div class="tree-photo-card">
-<div class="tree-photo-wrap">
-<img alt="Visão superior da planta mostrando a distribuição das folhas" src="assets/arvore_topo_clean.png"/>
-</div>
-</div>
-<div class="tree-photo-card">
-<div class="tree-photo-wrap">
-<img alt="Visão lateral da planta mostrando tronco e ramos" src="assets/arvore_lateral_clean.png"/>
-</div>
-</div>
-</div>
-<!-- Pilares conceituais limpos para ancorar a explicação falada -->
-<div class="metaphor-pillars-column">
-<!-- Folha = Commit -->
-<div class="pillar-card">
-<div class="pillar-icon-box pillar-leaf">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
-<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
-</svg>
-</div>
-<div class="pillar-text-group">
-<span class="pillar-name">Cada Folha</span>
-<span class="pillar-git-tag">Commit</span>
-</div>
-</div>
-<!-- Ramo = Branch -->
-<div class="pillar-card">
-<div class="pillar-icon-box pillar-branch">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
-<line x1="6" x2="6" y1="3" y2="15"></line>
-<circle cx="18" cy="6" r="3"></circle>
-<circle cx="6" cy="18" r="3"></circle>
-<path d="M18 9a9 9 0 0 1-9 9"></path>
-</svg>
-</div>
-<div class="pillar-text-group">
-<span class="pillar-name">Cada Ramo</span>
-<span class="pillar-git-tag">Branch</span>
-</div>
-</div>
-<!-- Tronco = Projeto Final / Main -->
-<div class="pillar-card">
-<div class="pillar-icon-box pillar-trunk">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
-<path d="M12 2v20"></path>
-<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-</svg>
-</div>
-<div class="pillar-text-group">
-<span class="pillar-name">O Tronco</span>
-<span class="pillar-git-tag">Projeto Final · main</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Slide 9: Inspeção & Rastreamento (git status) -->
-<section class="slide" data-slide="9">
-<header class="slide-header">
-<h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
-</header>
-<div class="status-split-grid">
-<!-- Terminal com execução real do git status -->
-<article class="terminal-status-box">
-<div class="terminal-header-dots">
-<span class="term-dot red"></span>
-<span class="term-dot yellow"></span>
-<span class="term-dot green"></span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git status</span>
-</div>
-<div class="status-term-output">
-<span class="status-line-head">On branch main</span>
-<span class="status-line-muted">Changes to be committed:</span>
-<span class="status-line-staged">modified:  index.html</span>
-<span class="status-line-muted" style="margin-top: 0.35rem">Changes not staged for commit:</span>
-<span class="status-line-modified">modified:  src/payment.js</span>
-<span class="status-line-muted" style="margin-top: 0.35rem">Untracked files:</span>
-<span class="status-line-untracked">new-feature.log</span>
-</div>
-</article>
-<!-- As 3 zonas visuais de rastreamento -->
-<div class="status-states-column">
-<!-- Untracked -->
-<div class="state-card">
-<span class="state-dot-indicator dot-untracked"></span>
-<div class="state-info">
-<span class="state-title">Não Rastreado</span>
-<span class="state-label">Untracked</span>
-</div>
-</div>
-<!-- Modified -->
-<div class="state-card">
-<span class="state-dot-indicator dot-modified"></span>
-<div class="state-info">
-<span class="state-title">Modificado</span>
-<span class="state-label">Modified</span>
-</div>
-</div>
-<!-- Staged -->
-<div class="state-card">
-<span class="state-dot-indicator dot-staged"></span>
-<div class="state-info">
-<span class="state-title">Preparado</span>
-<span class="state-label">Staged</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Slide 10: Histórico & Linha do Tempo (git log) -->
-<section class="slide" data-slide="10">
-<header class="slide-header">
-<h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
-</header>
-<div class="log-slide-grid">
-<!-- Terminal com visualização em árvore/lista de commits -->
-<article class="terminal-log-box">
-<div class="terminal-header-dots">
-<span class="term-dot red"></span>
-<span class="term-dot yellow"></span>
-<span class="term-dot green"></span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git log</span>
-</div>
-<div class="log-entries-list">
-<!-- Commit 3 (Latest) -->
-<div class="log-entry latest">
-<div class="log-commit-line">
-<span class="log-hash">commit 8f2c31d</span>
-<span class="log-head-tag">HEAD -&gt; main</span>
-</div>
-<span class="log-meta-line">Autor: Vinicius Macedo &lt;vinicius@empresa.com&gt;</span>
-<span class="log-msg-line">fix: corrige validação de status no checkout</span>
-</div>
-<!-- Commit 2 -->
-<div class="log-entry">
-<div class="log-commit-line">
-<span class="log-hash">commit 4a91b2e</span>
-</div>
-<span class="log-meta-line">Autor: Luigi Eliabe &lt;luigi@empresa.com&gt;</span>
-<span class="log-msg-line">feat: adiciona fluxo de pagamento</span>
-</div>
-<!-- Commit 1 -->
-<div class="log-entry">
-<div class="log-commit-line">
-<span class="log-hash">commit 1b04c8f</span>
-</div>
-<span class="log-meta-line">Autor: Icaro Vinicius &lt;icaro@empresa.com&gt;</span>
-<span class="log-msg-line">chore: setup inicial do projeto</span>
-</div>
-</div>
-</article>
-<!-- Variações e Visualizações Rápidas -->
-<div class="log-tools-column">
-<!-- Visualização Compacta -->
-<div class="log-tool-card">
-<span class="tool-name">Resumo Compacto</span>
-<span class="tool-cmd-snippet">git log --oneline</span>
-</div>
-<!-- Gráfico de Branches -->
-<div class="log-tool-card">
-<span class="tool-name">Árvore Visual</span>
-<span class="tool-cmd-snippet">git log --graph --oneline</span>
-</div>
-<!-- Filtragem por Quantidade -->
-<div class="log-tool-card">
-<span class="tool-name">Últimos Commits</span>
-<span class="tool-cmd-snippet">git log -n 3</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
-<section class="slide" data-slide="11">
-<header class="slide-header">
-<h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
-</header>
-<div class="handson-grid">
-<!-- Passo 1: .gitignore -->
-<article class="handson-card">
-<div class="handson-top">
-<div class="handson-badge-row">
-<span class="handson-step-num">01</span>
-</div>
-<h3 class="handson-title">Proteger Segredos</h3>
-<div class="handson-cmd-box">
-<span class="handson-prompt">$</span>
-<span>echo ".env" &gt;&gt; .gitignore</span>
-</div>
-</div>
-<p class="handson-tagline">
+        </header>
+
+        <div class="metaphor-full-grid">
+          <!-- Galeria com as duas fotos reais da planta -->
+          <div class="metaphor-gallery">
+            <div class="tree-photo-card">
+              <div class="tree-photo-wrap">
+                <img
+                  src="assets/arvore_topo_clean.png"
+                  alt="Visão superior da planta mostrando a distribuição das folhas"
+                />
+              </div>
+            </div>
+            <div class="tree-photo-card">
+              <div class="tree-photo-wrap">
+                <img
+                  src="assets/arvore_lateral_clean.png"
+                  alt="Visão lateral da planta mostrando tronco e ramos"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilares conceituais limpos para ancorar a explicação falada -->
+          <div class="metaphor-pillars-column">
+            <!-- Folha = Commit -->
+            <div class="pillar-card">
+              <div class="pillar-icon-box pillar-leaf">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+                  ></path>
+                  <path
+                    d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"
+                  ></path>
+                </svg>
+              </div>
+              <div class="pillar-text-group">
+                <span class="pillar-name">Cada Folha</span>
+                <span class="pillar-git-tag">Commit</span>
+              </div>
+            </div>
+
+            <!-- Ramo = Branch -->
+            <div class="pillar-card">
+              <div class="pillar-icon-box pillar-branch">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <div class="pillar-text-group">
+                <span class="pillar-name">Cada Ramo</span>
+                <span class="pillar-git-tag">Branch</span>
+              </div>
+            </div>
+
+            <!-- Tronco = Projeto Final / Main -->
+            <div class="pillar-card">
+              <div class="pillar-icon-box pillar-trunk">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2v20"></path>
+                  <path
+                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <div class="pillar-text-group">
+                <span class="pillar-name">O Tronco</span>
+                <span class="pillar-git-tag">Projeto Final · main</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Inspeção & Rastreamento (git status) -->
+      <section class="slide" data-slide="9">
+        <header class="slide-header">
+          <h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
+        </header>
+
+        <div class="status-split-grid">
+          <!-- Terminal com execução real do git status -->
+          <article class="terminal-status-box">
+            <div class="terminal-header-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+
+            <div class="term-cmd">
+              <span class="term-prompt">$</span>
+              <span>git status</span>
+            </div>
+
+            <div class="status-term-output">
+              <span class="status-line-head">On branch main</span>
+              <span class="status-line-muted">Changes to be committed:</span>
+              <span class="status-line-staged">modified: &nbsp;index.html</span>
+
+              <span class="status-line-muted" style="margin-top: 0.35rem"
+                >Changes not staged for commit:</span
+              >
+              <span class="status-line-modified"
+                >modified: &nbsp;src/payment.js</span
+              >
+
+              <span class="status-line-muted" style="margin-top: 0.35rem"
+                >Untracked files:</span
+              >
+              <span class="status-line-untracked">new-feature.log</span>
+            </div>
+          </article>
+
+          <!-- As 3 zonas visuais de rastreamento -->
+          <div class="status-states-column">
+            <!-- Untracked -->
+            <div class="state-card">
+              <span class="state-dot-indicator dot-untracked"></span>
+              <div class="state-info">
+                <span class="state-title">Não Rastreado</span>
+                <span class="state-label">Untracked</span>
+              </div>
+            </div>
+
+            <!-- Modified -->
+            <div class="state-card">
+              <span class="state-dot-indicator dot-modified"></span>
+              <div class="state-info">
+                <span class="state-title">Modificado</span>
+                <span class="state-label">Modified</span>
+              </div>
+            </div>
+
+            <!-- Staged -->
+            <div class="state-card">
+              <span class="state-dot-indicator dot-staged"></span>
+              <div class="state-info">
+                <span class="state-title">Preparado</span>
+                <span class="state-label">Staged</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Histórico & Linha do Tempo (git log) -->
+      <section class="slide" data-slide="10">
+        <header class="slide-header">
+          <h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
+        </header>
+
+        <div class="log-slide-grid">
+          <!-- Terminal com visualização em árvore/lista de commits -->
+          <article class="terminal-log-box">
+            <div class="terminal-header-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+
+            <div class="term-cmd">
+              <span class="term-prompt">$</span>
+              <span>git log</span>
+            </div>
+
+            <div class="log-entries-list">
+              <!-- Commit 3 (Latest) -->
+              <div class="log-entry latest">
+                <div class="log-commit-line">
+                  <span class="log-hash">commit 8f2c31d</span>
+                  <span class="log-head-tag">HEAD -> main</span>
+                </div>
+                <span class="log-meta-line"
+                  >Autor: Vinicius Macedo &lt;vinicius@empresa.com&gt;</span
+                >
+                <span class="log-msg-line"
+                  >fix: corrige validação de status no checkout</span
+                >
+              </div>
+
+              <!-- Commit 2 -->
+              <div class="log-entry">
+                <div class="log-commit-line">
+                  <span class="log-hash">commit 4a91b2e</span>
+                </div>
+                <span class="log-meta-line"
+                  >Autor: Luigi Eliabe &lt;luigi@empresa.com&gt;</span
+                >
+                <span class="log-msg-line"
+                  >feat: adiciona fluxo de pagamento</span
+                >
+              </div>
+
+              <!-- Commit 1 -->
+              <div class="log-entry">
+                <div class="log-commit-line">
+                  <span class="log-hash">commit 1b04c8f</span>
+                </div>
+                <span class="log-meta-line"
+                  >Autor: Icaro Vinicius &lt;icaro@empresa.com&gt;</span
+                >
+                <span class="log-msg-line"
+                  >chore: setup inicial do projeto</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Variações e Visualizações Rápidas -->
+          <div class="log-tools-column">
+            <!-- Visualização Compacta -->
+            <div class="log-tool-card">
+              <span class="tool-name">Resumo Compacto</span>
+              <span class="tool-cmd-snippet">git log --oneline</span>
+            </div>
+
+            <!-- Gráfico de Branches -->
+            <div class="log-tool-card">
+              <span class="tool-name">Árvore Visual</span>
+              <span class="tool-cmd-snippet">git log --graph --oneline</span>
+            </div>
+
+            <!-- Filtragem por Quantidade -->
+            <div class="log-tool-card">
+              <span class="tool-name">Últimos Commits</span>
+              <span class="tool-cmd-snippet">git log -n 3</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
+      <section class="slide" data-slide="11">
+        <header class="slide-header">
+          <h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
+        </header>
+
+        <div class="handson-grid">
+          <!-- Passo 1: .gitignore -->
+          <article class="handson-card">
+            <div class="handson-top">
+              <div class="handson-badge-row">
+                <span class="handson-step-num">01</span>
+              </div>
+              <h3 class="handson-title">Proteger Segredos</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>echo ".env" >> .gitignore</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
               Evite versionar <strong>logs</strong>, dependências e credenciais
               sensíveis.
             </p>
-</article>
-<!-- Passo 2: git diff -->
-<article class="handson-card">
-<div class="handson-top">
-<div class="handson-badge-row">
-<span class="handson-step-num">02</span>
-</div>
-<h3 class="handson-title">Inspecionar Linhas</h3>
-<div class="handson-cmd-box">
-<span class="handson-prompt">$</span>
-<span>git diff</span>
-</div>
-</div>
-<p class="handson-tagline">
+          </article>
+
+          <!-- Passo 2: git diff -->
+          <article class="handson-card">
+            <div class="handson-top">
+              <div class="handson-badge-row">
+                <span class="handson-step-num">02</span>
+              </div>
+              <h3 class="handson-title">Inspecionar Linhas</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git diff</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
               Revise as linhas <strong>alteradas</strong> antes de preparar
               qualquer arquivo.
             </p>
-</article>
-<!-- Passo 3: git add -->
-<article class="handson-card">
-<div class="handson-top">
-<div class="handson-badge-row">
-<span class="handson-step-num">03</span>
-</div>
-<h3 class="handson-title">Preparar Arquivos</h3>
-<div class="handson-cmd-box">
-<span class="handson-prompt">$</span>
-<span>git add nomearquivo</span>
-</div>
-</div>
-<p class="handson-tagline">
+          </article>
+
+          <!-- Passo 3: git add -->
+          <article class="handson-card">
+            <div class="handson-top">
+              <div class="handson-badge-row">
+                <span class="handson-step-num">03</span>
+              </div>
+              <h3 class="handson-title">Preparar Arquivos</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git add nomearquivo</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
               Mova as correções validadas para a
               <strong>área de staging</strong>.
             </p>
-</article>
-<!-- Passo 4: git commit -->
-<article class="handson-card">
-<div class="handson-top">
-<div class="handson-badge-row">
-<span class="handson-step-num">04</span>
-</div>
-<h3 class="handson-title">Gravar Snapshot</h3>
-<div class="handson-cmd-box">
-<span class="handson-prompt">$</span>
-<span>git commit -m "fix: ..."</span>
-</div>
-</div>
-<p class="handson-tagline">
+          </article>
+
+          <!-- Passo 4: git commit -->
+          <article class="handson-card">
+            <div class="handson-top">
+              <div class="handson-badge-row">
+                <span class="handson-step-num">04</span>
+              </div>
+              <h3 class="handson-title">Gravar Snapshot</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git commit -m "fix: ..."</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
               Escreva uma <strong>mensagem clara</strong> descrevendo o que foi
               resolvido.
             </p>
-</article>
-</div>
-</section>
-<!-- ============================================================= -->
-<!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
-<!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
-<!-- ============================================================= -->
-<section class="slide" data-slide="12" id="bugSlide">
-<header class="slide-header" style="text-align: center">
-<h2 class="slide-heading">BUG ENCONTRADO!</h2>
-</header>
-<div class="bug-slide-content">
-<div class="bug-photo-frame">
-<img alt="Ilustração de bug de software" src="assets/bug_generico.svg"/>
-</div>
-<span class="bug-mission-badge">
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
+      <!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
+      <!-- ============================================================= -->
+      <section class="slide" data-slide="12" id="bugSlide">
+        <header class="slide-header" style="text-align: center">
+          <h2 class="slide-heading">BUG ENCONTRADO!</h2>
+        </header>
+
+        <div class="bug-slide-content">
+          <div class="bug-photo-frame">
+            <img
+              src="assets/bug_generico.svg"
+              alt="Ilustração de bug de software"
+            />
+          </div>
+          <span class="bug-mission-badge">
             OBJETIVO: Remova este slide no index.html e comite a correção!
           </span>
-</div>
-</section>
-<!-- =============================APAGUE ATE AQUI================================ -->
-<!-- Slide 13: Autenticação via Token (PAT) & Git Push -->
-<section class="slide" data-slide="13">
-<header class="slide-header">
-<h2 class="slide-heading">
+        </div>
+      </section>
+      <!-- =============================APAGUE ATE AQUI================================ -->
+
+      <!-- Slide 13: Autenticação via Token (PAT) & Git Push -->
+      <section class="slide" data-slide="13">
+        <header class="slide-header">
+          <h2 class="slide-heading">
             Autenticação: Criando o Token &amp; Push
           </h2>
-</header>
-<div class="token-slide-grid">
-<!-- Coluna 1: Como gerar o token no GitHub -->
-<article class="token-steps-card">
-<div class="action-header">
-<span class="action-step-badge">NO GITHUB</span>
-<a class="repo-link-btn" href="https://github.com/settings/tokens" rel="noopener noreferrer" target="_blank">
+        </header>
+
+        <div class="token-slide-grid">
+          <!-- Coluna 1: Como gerar o token no GitHub -->
+          <article class="token-steps-card">
+            <div class="action-header">
+              <span class="action-step-badge">NO GITHUB</span>
+              <a
+                href="https://github.com/settings/tokens"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="repo-link-btn"
+              >
                 Gerar Token ↗
               </a>
-</div>
-<div class="token-path-nav">
-<span>Settings</span>
-<span>›</span>
-<span>Developer Settings</span>
-<span>›</span>
-<span>Personal access tokens</span>
-<span>›</span>
-<strong>Tokens (classic)</strong>
-</div>
-<div class="token-checklist">
-<div class="token-check-item">
-<span class="token-check-bullet">1</span>
-<span>Nomeie o token (ex: <em>Minicurso Git</em>)</span>
-</div>
-<div class="token-check-item">
-<span class="token-check-bullet">2</span>
-<span>Marque o escopo:
-                  <code class="token-scope-tag">repo</code></span>
-</div>
-<div class="token-check-item">
-<span class="token-check-bullet">3</span>
-<span>Copie o token gerado (<code>ghp_...</code>)</span>
-</div>
-</div>
-<p class="story-footer-quote">
+            </div>
+
+            <div class="token-path-nav">
+              <span>Settings</span>
+              <span>›</span>
+              <span>Developer Settings</span>
+              <span>›</span>
+              <span>Personal access tokens</span>
+              <span>›</span>
+              <strong>Tokens (classic)</strong>
+            </div>
+
+            <div class="token-checklist">
+              <div class="token-check-item">
+                <span class="token-check-bullet">1</span>
+                <span>Nomeie o token (ex: <em>Minicurso Git</em>)</span>
+              </div>
+              <div class="token-check-item">
+                <span class="token-check-bullet">2</span>
+                <span
+                  >Marque o escopo:
+                  <code class="token-scope-tag">repo</code></span
+                >
+              </div>
+              <div class="token-check-item">
+                <span class="token-check-bullet">3</span>
+                <span>Copie o token gerado (<code>ghp_...</code>)</span>
+              </div>
+            </div>
+
+            <p class="story-footer-quote">
               O token substitui a senha da sua conta no terminal.
             </p>
-</article>
-<!-- Coluna 2: Executando o Push no Terminal -->
-<article class="push-terminal-box">
-<div class="terminal-header-dots">
-<span class="term-dot red"></span>
-<span class="term-dot yellow"></span>
-<span class="term-dot green"></span>
-</div>
-<div class="term-cmd">
-<span class="term-prompt">$</span>
-<span>git push origin main</span>
-</div>
-<div class="push-term-lines">
-<span>Username: <strong>SEU-USUARIO</strong></span>
-<div class="push-highlight-line">
-                Password: <strong>[Cole o Token (ghp_...)]</strong>
-</div>
-</div>
-<div class="push-success-line">
-              Enumerating objects: 5, done.<br/>
-              To https://github.com/SEU-USER/minicurso-git-github.git<br/>
-                4a91b2e..8f2c31d  main -&gt; main
+          </article>
+
+          <!-- Coluna 2: Executando o Push no Terminal -->
+          <article class="push-terminal-box">
+            <div class="terminal-header-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
             </div>
-<p class="story-footer-quote" style="margin-top: 0.25rem">
+
+            <div class="term-cmd">
+              <span class="term-prompt">$</span>
+              <span>git push origin main</span>
+            </div>
+
+            <div class="push-term-lines">
+              <span>Username: <strong>SEU-USUARIO</strong></span>
+              <div class="push-highlight-line">
+                Password: <strong>[Cole o Token (ghp_...)]</strong>
+              </div>
+            </div>
+
+            <div class="push-success-line">
+              Enumerating objects: 5, done.<br />
+              To https://github.com/SEU-USER/minicurso-git-github.git<br />
+              &nbsp; 4a91b2e..8f2c31d &nbsp;main -&gt; main
+            </div>
+
+            <p class="story-footer-quote" style="margin-top: 0.25rem">
               Pronto! Sua correção foi enviada para o seu fork remoto.
             </p>
-</article>
-</div>
-</section>
-<!-- Slide 14: Pull Request & Boas Práticas -->
+          </article>
+        </div>
+      </section>
 
-</main>
-<footer class="deck-footer">
-<span class="slide-counter" id="slideCounter">1 / 1</span>
-<div class="nav-hints">
-<span>Navegar:</span>
-<span class="key-badge">←</span>
-<span class="key-badge">→</span>
-<span>ou</span>
-<span class="key-badge">Espaço</span>
-</div>
-</footer>
-<script>
+      <!-- Slide 14: Pull Request & Boas Práticas -->
+      <section class="slide" data-slide="14">
+        <header class="slide-header">
+          <h2 class="slide-heading">Entrega: Abrindo o Pull Request (PR)</h2>
+        </header>
+
+        <div class="pr-slide-grid">
+          <!-- Coluna 1: O que é e o fluxo de branches -->
+          <article class="pr-flow-card">
+            <div class="action-header">
+              <span class="action-step-badge">FLUXO DE INTEGRAÇÃO</span>
+              <a
+                href="https://github.com/ViniciusMBotelho/minicurso-git-github/pulls"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="repo-link-btn"
+              >
+                Ver PRs ↗
+              </a>
+            </div>
+
+            <div class="pr-branch-badge-row">
+              <span class="pr-branch-tag">seu-fork : main</span>
+              <span>→</span>
+              <span class="pr-branch-tag dest">repo-oficial : main</span>
+            </div>
+
+            <p class="story-footer-quote">
+              O <em>Pull Request</em> é o pedido formal para que o time revise e incorpore sua solução ao código principal.
+            </p>
+          </article>
+
+          <!-- Coluna 2: Mockup com Boas Práticas de Título e Descrição -->
+          <article class="pr-ui-mockup">
+            <div class="pr-input-group">
+              <span class="pr-field-label">Título Semântico (O que foi feito?)</span>
+              <div class="pr-title-box">
+                <em>fix:</em> remove slide com bug de renderização no checkout
+              </div>
+            </div>
+
+            <div class="pr-input-group">
+              <span class="pr-field-label">Descrição Objetiva (Por que e como?)</span>
+              <div class="pr-body-box">
+                <span class="pr-section-head">### Contexto</span>
+                <span>O slide 12 continha um erro visual que quebrava o fluxo.</span>
+                <span class="pr-section-head" style="margin-top: 0.2rem;">### Solução</span>
+                <span>Removida a section correspondente e validado o deck.</span>
+              </div>
+            </div>
+
+            <div class="pr-btn-submit">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.256a2.251 2.251 0 11-1.5 0V7.5a.5.5 0 00-.5-.5h-1V5.5h1A2.5 2.5 0 0013.5 8v2.256a2.25 2.25 0 11-1.5 0V5A2 2 0 0011 2.5z"></path>
+              </svg>
+              Create pull request
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="deck-footer">
+      <span class="slide-counter" id="slideCounter">1 / 1</span>
+      <div class="nav-hints">
+        <span>Navegar:</span>
+        <span class="key-badge">←</span>
+        <span class="key-badge">→</span>
+        <span>ou</span>
+        <span class="key-badge">Espaço</span>
+      </div>
+    </footer>
+
+    <script>
       const slides = document.querySelectorAll(".slide");
       const progressBar = document.getElementById("progressBar");
       const slideCounter = document.getElementById("slideCounter");
@@ -2384,5 +2693,5 @@
 
       updatePresentation();
     </script>
-</body>
+  </body>
 </html>
