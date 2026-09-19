@@ -1931,7 +1931,53 @@
 </div>
 </section>
 <!-- Slide: Identidade & Configuração (git config) -->
-
+<section class="slide" data-slide="7">
+<header class="slide-header">
+<h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
+</header>
+<div class="config-slide-grid">
+<!-- Card 1: Definindo Nome e Email -->
+<article class="config-card">
+<div class="action-header">
+<span class="config-badge">ASSINATURA DOS COMMITS</span>
+</div>
+<div class="config-cmds-box">
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git config user.name "Seu Nome"</span>
+</div>
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git config user.email "iniciais@aluno.ifnmg.edu.br"</span>
+</div>
+</div>
+<p class="story-footer-quote">
+              Todo commit gravado no Git carrega o <em>autor</em> e o
+              <em>e-mail</em> de quem fez a alteração.
+            </p>
+</article>
+<!-- Card 2: Escopo Local vs Global & Checagem -->
+<article class="config-card">
+<div class="action-header">
+<span class="config-badge flag">ESCOPO &amp; CONFERÊNCIA</span>
+</div>
+<div class="config-cmds-box">
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git config --local user.email "..."</span>
+</div>
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git config --list</span>
+</div>
+</div>
+<p class="story-footer-quote">
+              Use <code>--local</code> para configurar apenas este projeto, ou
+              liste tudo com <em>git config --list</em>.
+            </p>
+</article>
+</div>
+</section>
 <!-- Slide 8: Metáfora das Branches -->
 
 <!-- Slide 9: Inspeção & Rastreamento (git status) -->
