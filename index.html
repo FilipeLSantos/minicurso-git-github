@@ -2102,7 +2102,70 @@
 </div>
 </section>
 <!-- Slide 10: Histórico & Linha do Tempo (git log) -->
-
+<section class="slide" data-slide="10">
+<header class="slide-header">
+<h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
+</header>
+<div class="log-slide-grid">
+<!-- Terminal com visualização em árvore/lista de commits -->
+<article class="terminal-log-box">
+<div class="terminal-header-dots">
+<span class="term-dot red"></span>
+<span class="term-dot yellow"></span>
+<span class="term-dot green"></span>
+</div>
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git log</span>
+</div>
+<div class="log-entries-list">
+<!-- Commit 3 (Latest) -->
+<div class="log-entry latest">
+<div class="log-commit-line">
+<span class="log-hash">commit 8f2c31d</span>
+<span class="log-head-tag">HEAD -&gt; main</span>
+</div>
+<span class="log-meta-line">Autor: Vinicius Macedo &lt;vinicius@empresa.com&gt;</span>
+<span class="log-msg-line">fix: corrige validação de status no checkout</span>
+</div>
+<!-- Commit 2 -->
+<div class="log-entry">
+<div class="log-commit-line">
+<span class="log-hash">commit 4a91b2e</span>
+</div>
+<span class="log-meta-line">Autor: Luigi Eliabe &lt;luigi@empresa.com&gt;</span>
+<span class="log-msg-line">feat: adiciona fluxo de pagamento</span>
+</div>
+<!-- Commit 1 -->
+<div class="log-entry">
+<div class="log-commit-line">
+<span class="log-hash">commit 1b04c8f</span>
+</div>
+<span class="log-meta-line">Autor: Icaro Vinicius &lt;icaro@empresa.com&gt;</span>
+<span class="log-msg-line">chore: setup inicial do projeto</span>
+</div>
+</div>
+</article>
+<!-- Variações e Visualizações Rápidas -->
+<div class="log-tools-column">
+<!-- Visualização Compacta -->
+<div class="log-tool-card">
+<span class="tool-name">Resumo Compacto</span>
+<span class="tool-cmd-snippet">git log --oneline</span>
+</div>
+<!-- Gráfico de Branches -->
+<div class="log-tool-card">
+<span class="tool-name">Árvore Visual</span>
+<span class="tool-cmd-snippet">git log --graph --oneline</span>
+</div>
+<!-- Filtragem por Quantidade -->
+<div class="log-tool-card">
+<span class="tool-name">Últimos Commits</span>
+<span class="tool-cmd-snippet">git log -n 3</span>
+</div>
+</div>
+</div>
+</section>
 <!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
 
 <!-- ============================================================= -->
