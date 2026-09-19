@@ -2167,7 +2167,81 @@
 </div>
 </section>
 <!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
-
+<section class="slide" data-slide="11">
+<header class="slide-header">
+<h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
+</header>
+<div class="handson-grid">
+<!-- Passo 1: .gitignore -->
+<article class="handson-card">
+<div class="handson-top">
+<div class="handson-badge-row">
+<span class="handson-step-num">01</span>
+</div>
+<h3 class="handson-title">Proteger Segredos</h3>
+<div class="handson-cmd-box">
+<span class="handson-prompt">$</span>
+<span>echo ".env" &gt;&gt; .gitignore</span>
+</div>
+</div>
+<p class="handson-tagline">
+              Evite versionar <strong>logs</strong>, dependências e credenciais
+              sensíveis.
+            </p>
+</article>
+<!-- Passo 2: git diff -->
+<article class="handson-card">
+<div class="handson-top">
+<div class="handson-badge-row">
+<span class="handson-step-num">02</span>
+</div>
+<h3 class="handson-title">Inspecionar Linhas</h3>
+<div class="handson-cmd-box">
+<span class="handson-prompt">$</span>
+<span>git diff</span>
+</div>
+</div>
+<p class="handson-tagline">
+              Revise as linhas <strong>alteradas</strong> antes de preparar
+              qualquer arquivo.
+            </p>
+</article>
+<!-- Passo 3: git add -->
+<article class="handson-card">
+<div class="handson-top">
+<div class="handson-badge-row">
+<span class="handson-step-num">03</span>
+</div>
+<h3 class="handson-title">Preparar Arquivos</h3>
+<div class="handson-cmd-box">
+<span class="handson-prompt">$</span>
+<span>git add nomearquivo</span>
+</div>
+</div>
+<p class="handson-tagline">
+              Mova as correções validadas para a
+              <strong>área de staging</strong>.
+            </p>
+</article>
+<!-- Passo 4: git commit -->
+<article class="handson-card">
+<div class="handson-top">
+<div class="handson-badge-row">
+<span class="handson-step-num">04</span>
+</div>
+<h3 class="handson-title">Gravar Snapshot</h3>
+<div class="handson-cmd-box">
+<span class="handson-prompt">$</span>
+<span>git commit -m "fix: ..."</span>
+</div>
+</div>
+<p class="handson-tagline">
+              Escreva uma <strong>mensagem clara</strong> descrevendo o que foi
+              resolvido.
+            </p>
+</article>
+</div>
+</section>
 <!-- ============================================================= -->
 <!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
 <!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
