@@ -2046,7 +2046,61 @@
 </div>
 </section>
 <!-- Slide 9: Inspeção & Rastreamento (git status) -->
-
+<section class="slide" data-slide="9">
+<header class="slide-header">
+<h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
+</header>
+<div class="status-split-grid">
+<!-- Terminal com execução real do git status -->
+<article class="terminal-status-box">
+<div class="terminal-header-dots">
+<span class="term-dot red"></span>
+<span class="term-dot yellow"></span>
+<span class="term-dot green"></span>
+</div>
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git status</span>
+</div>
+<div class="status-term-output">
+<span class="status-line-head">On branch main</span>
+<span class="status-line-muted">Changes to be committed:</span>
+<span class="status-line-staged">modified:  index.html</span>
+<span class="status-line-muted" style="margin-top: 0.35rem">Changes not staged for commit:</span>
+<span class="status-line-modified">modified:  src/payment.js</span>
+<span class="status-line-muted" style="margin-top: 0.35rem">Untracked files:</span>
+<span class="status-line-untracked">new-feature.log</span>
+</div>
+</article>
+<!-- As 3 zonas visuais de rastreamento -->
+<div class="status-states-column">
+<!-- Untracked -->
+<div class="state-card">
+<span class="state-dot-indicator dot-untracked"></span>
+<div class="state-info">
+<span class="state-title">Não Rastreado</span>
+<span class="state-label">Untracked</span>
+</div>
+</div>
+<!-- Modified -->
+<div class="state-card">
+<span class="state-dot-indicator dot-modified"></span>
+<div class="state-info">
+<span class="state-title">Modificado</span>
+<span class="state-label">Modified</span>
+</div>
+</div>
+<!-- Staged -->
+<div class="state-card">
+<span class="state-dot-indicator dot-staged"></span>
+<div class="state-info">
+<span class="state-title">Preparado</span>
+<span class="state-label">Staged</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- Slide 10: Histórico & Linha do Tempo (git log) -->
 
 <!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
