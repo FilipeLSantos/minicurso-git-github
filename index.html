@@ -2261,7 +2261,77 @@
 </section>
 <!-- =============================APAGUE ATE AQUI================================ -->
 <!-- Slide 13: Autenticação via Token (PAT) & Git Push -->
-
+<section class="slide" data-slide="13">
+<header class="slide-header">
+<h2 class="slide-heading">
+            Autenticação: Criando o Token &amp; Push
+          </h2>
+</header>
+<div class="token-slide-grid">
+<!-- Coluna 1: Como gerar o token no GitHub -->
+<article class="token-steps-card">
+<div class="action-header">
+<span class="action-step-badge">NO GITHUB</span>
+<a class="repo-link-btn" href="https://github.com/settings/tokens" rel="noopener noreferrer" target="_blank">
+                Gerar Token ↗
+              </a>
+</div>
+<div class="token-path-nav">
+<span>Settings</span>
+<span>›</span>
+<span>Developer Settings</span>
+<span>›</span>
+<span>Personal access tokens</span>
+<span>›</span>
+<strong>Tokens (classic)</strong>
+</div>
+<div class="token-checklist">
+<div class="token-check-item">
+<span class="token-check-bullet">1</span>
+<span>Nomeie o token (ex: <em>Minicurso Git</em>)</span>
+</div>
+<div class="token-check-item">
+<span class="token-check-bullet">2</span>
+<span>Marque o escopo:
+                  <code class="token-scope-tag">repo</code></span>
+</div>
+<div class="token-check-item">
+<span class="token-check-bullet">3</span>
+<span>Copie o token gerado (<code>ghp_...</code>)</span>
+</div>
+</div>
+<p class="story-footer-quote">
+              O token substitui a senha da sua conta no terminal.
+            </p>
+</article>
+<!-- Coluna 2: Executando o Push no Terminal -->
+<article class="push-terminal-box">
+<div class="terminal-header-dots">
+<span class="term-dot red"></span>
+<span class="term-dot yellow"></span>
+<span class="term-dot green"></span>
+</div>
+<div class="term-cmd">
+<span class="term-prompt">$</span>
+<span>git push origin main</span>
+</div>
+<div class="push-term-lines">
+<span>Username: <strong>SEU-USUARIO</strong></span>
+<div class="push-highlight-line">
+                Password: <strong>[Cole o Token (ghp_...)]</strong>
+</div>
+</div>
+<div class="push-success-line">
+              Enumerating objects: 5, done.<br/>
+              To https://github.com/SEU-USER/minicurso-git-github.git<br/>
+                4a91b2e..8f2c31d  main -&gt; main
+            </div>
+<p class="story-footer-quote" style="margin-top: 0.25rem">
+              Pronto! Sua correção foi enviada para o seu fork remoto.
+            </p>
+</article>
+</div>
+</section>
 <!-- Slide 14: Pull Request & Boas Práticas -->
 
 </main>
