@@ -1484,7 +1484,10 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease;
       }
 
       .config-tab-btn:hover {
@@ -1824,7 +1827,10 @@
         color: #f1f5f9;
         font-size: 0.92rem;
         font-weight: 600;
-        transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          border-color 0.15s ease,
+          background-color 0.15s ease;
       }
 
       .thanks-link-card:hover {
@@ -1837,6 +1843,56 @@
         color: #ff6b4a;
         display: flex;
         align-items: center;
+      }
+
+      /* Slide: Comandos de Branch */
+      .branch-cmds-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+        align-items: stretch;
+      }
+
+      .branch-cmd-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.35rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.1rem;
+        transition:
+          transform 0.15s ease,
+          border-color 0.15s ease;
+      }
+
+      .branch-cmd-card:hover {
+        transform: translateY(-3px);
+        border-color: #3b4d6b;
+      }
+
+      .branch-badge-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .branch-step-badge {
+        font-family: var(--mono-font);
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #38bdf8;
+        background: rgba(56, 189, 248, 0.12);
+        padding: 0.2rem 0.55rem;
+        border-radius: 4px;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+
+      .branch-step-badge.flag {
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-color: rgba(255, 87, 51, 0.3);
       }
     </style>
   </head>
@@ -2295,10 +2351,18 @@
 
         <div class="config-tabs-container">
           <nav class="config-tabs-nav" aria-label="Abas de configuração do Git">
-            <button class="config-tab-btn active" data-tab="tab-config-identidade" type="button">
+            <button
+              class="config-tab-btn active"
+              data-tab="tab-config-identidade"
+              type="button"
+            >
               <span>01. Identidade Local</span>
             </button>
-            <button class="config-tab-btn" data-tab="tab-config-list" type="button">
+            <button
+              class="config-tab-btn"
+              data-tab="tab-config-list"
+              type="button"
+            >
               <span>02. Inspecionar (git config --list)</span>
             </button>
           </nav>
@@ -2319,7 +2383,10 @@
                   </div>
                   <div class="term-cmd">
                     <span class="term-prompt">$</span>
-                    <span>git config --local user.email "iniciais@aluno.ifnmg.edu.br"</span>
+                    <span
+                      >git config --local user.email
+                      "iniciais@aluno.ifnmg.edu.br"</span
+                    >
                   </div>
                 </div>
 
@@ -2339,19 +2406,23 @@
                   <div class="scope-item">
                     <span class="scope-target">--local (Padrão do Lab)</span>
                     <p class="scope-text">
-                      Salva em <code>.git/config</code>. Garante que seu nome e e-mail fiquem vinculados apenas a este repositório sem alterar o restante da máquina.
+                      Salva em <code>.git/config</code>. Garante que seu nome e
+                      e-mail fiquem vinculados apenas a este repositório sem
+                      alterar o restante da máquina.
                     </p>
                   </div>
                   <div class="scope-item">
                     <span class="scope-target">--global (Sua Máquina)</span>
                     <p class="scope-text">
-                      Salva em <code>~/.gitconfig</code>. Aplica para todos os repositórios do seu usuário no computador pessoal.
+                      Salva em <code>~/.gitconfig</code>. Aplica para todos os
+                      repositórios do seu usuário no computador pessoal.
                     </p>
                   </div>
                 </div>
 
                 <p class="story-footer-quote">
-                  Em computadores compartilhados ou de laboratório, configure sempre com <code>--local</code>.
+                  Em computadores compartilhados ou de laboratório, configure
+                  sempre com <code>--local</code>.
                 </p>
               </article>
             </div>
@@ -2377,7 +2448,11 @@
                   <span>core.bare=false</span>
                   <span>remote.origin.url=https://github.com/...</span>
                   <span><strong>user.name=Seu Nome</strong></span>
-                  <span><strong>user.email=iniciais@aluno.ifnmg.edu.br</strong></span>
+                  <span
+                    ><strong
+                      >user.email=iniciais@aluno.ifnmg.edu.br</strong
+                    ></span
+                  >
                 </div>
               </div>
 
@@ -2389,7 +2464,8 @@
                     <span class="config-scope-title">Repositório Atual</span>
                   </div>
                   <span class="config-scope-desc">
-                    Gravado em <code>.git/config</code>. Tem a maior prioridade e sobrepõe os demais.
+                    Gravado em <code>.git/config</code>. Tem a maior prioridade
+                    e sobrepõe os demais.
                   </span>
                 </div>
 
@@ -2399,7 +2475,8 @@
                     <span class="config-scope-title">Usuário do Sistema</span>
                   </div>
                   <span class="config-scope-desc">
-                    Gravado em <code>~/.gitconfig</code>. Usado se não houver definição local.
+                    Gravado em <code>~/.gitconfig</code>. Usado se não houver
+                    definição local.
                   </span>
                 </div>
 
@@ -2409,7 +2486,8 @@
                     <span class="config-scope-title">Toda a Máquina</span>
                   </div>
                   <span class="config-scope-desc">
-                    Gravado em <code>/etc/gitconfig</code>. Padrão para todos os usuários do SO.
+                    Gravado em <code>/etc/gitconfig</code>. Padrão para todos os
+                    usuários do SO.
                   </span>
                 </div>
               </div>
@@ -2529,8 +2607,85 @@
         </div>
       </section>
 
-      <!-- Slide 9: Inspeção & Rastreamento (git status) -->
+      <!-- Slide 9: Comandos Essenciais de Branches -->
       <section class="slide" data-slide="9">
+        <header class="slide-header">
+          <h2 class="slide-heading">Branches na Prática: Comandos Essenciais</h2>
+        </header>
+
+        <div class="branch-cmds-grid">
+          <!-- Card 1: Criar nova branch -->
+          <article class="branch-cmd-card">
+            <div class="handson-top">
+              <div class="branch-badge-row">
+                <span class="branch-step-badge">01 · CRIAR</span>
+              </div>
+              <h3 class="handson-title">Criar Ramo</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git branch minha-feature</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
+              Cria uma nova linha de desenvolvimento a partir do ponto atual sem sair de onde você está.
+            </p>
+          </article>
+
+          <!-- Card 2: Trocar de branch -->
+          <article class="branch-cmd-card">
+            <div class="handson-top">
+              <div class="branch-badge-row">
+                <span class="branch-step-badge">02 · ALTERNAR</span>
+              </div>
+              <h3 class="handson-title">Mudar de Ramo</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git switch minha-feature</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
+              Muda para o ramo indicado. Também pode usar <code>git checkout minha-feature</code>.
+            </p>
+          </article>
+
+          <!-- Card 3: Criar e trocar ao mesmo tempo -->
+          <article class="branch-cmd-card">
+            <div class="handson-top">
+              <div class="branch-badge-row">
+                <span class="branch-step-badge flag">03 · ATALHO</span>
+              </div>
+              <h3 class="handson-title">Criar &amp; Entrar</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git switch -c minha-feature</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
+              Cria o ramo e já muda para ele em um único comando (ou <code>git checkout -b</code>).
+            </p>
+          </article>
+
+          <!-- Card 4: Listar branches -->
+          <article class="branch-cmd-card">
+            <div class="handson-top">
+              <div class="branch-badge-row">
+                <span class="branch-step-badge">04 · LISTAR</span>
+              </div>
+              <h3 class="handson-title">Ver Ramos</h3>
+              <div class="handson-cmd-box">
+                <span class="handson-prompt">$</span>
+                <span>git branch</span>
+              </div>
+            </div>
+            <p class="handson-tagline">
+              Lista todos os ramos locais e destaca com <strong>*</strong> em qual você está agora.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Slide 10: Inspeção & Rastreamento (git status) -->
+      <section class="slide" data-slide="10">
         <header class="slide-header">
           <h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
         </header>
@@ -2600,8 +2755,8 @@
         </div>
       </section>
 
-      <!-- Slide 10: Histórico & Linha do Tempo (git log) -->
-      <section class="slide" data-slide="10">
+      <!-- Slide 11: Histórico & Linha do Tempo (git log) -->
+      <section class="slide" data-slide="11">
         <header class="slide-header">
           <h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
         </header>
@@ -2686,8 +2841,8 @@
         </div>
       </section>
 
-      <!-- Slide 11: Mão na Massa - Ciclo de Correção do Bug -->
-      <section class="slide" data-slide="11">
+      <!-- Slide 12: Mão na Massa - Ciclo de Correção do Bug -->
+      <section class="slide" data-slide="12">
         <header class="slide-header">
           <h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
         </header>
@@ -2771,7 +2926,7 @@
       <!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
       <!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
       <!-- ============================================================= -->
-      <section class="slide" data-slide="12" id="bugSlide">
+      <section class="slide" data-slide="13" id="bugSlide">
         <header class="slide-header" style="text-align: center">
           <h2 class="slide-heading">BUG ENCONTRADO!</h2>
         </header>
@@ -2790,8 +2945,8 @@
       </section>
       <!-- =============================APAGUE ATE AQUI================================ -->
 
-      <!-- Slide 13: Autenticação via Token (PAT) & Git Push -->
-      <section class="slide" data-slide="13">
+      <!-- Slide 14: Autenticação via Token (PAT) & Git Push -->
+      <section class="slide" data-slide="14">
         <header class="slide-header">
           <h2 class="slide-heading">
             Autenticação: Criando o Token &amp; Push
@@ -2813,126 +2968,153 @@
               </a>
             </div>
 
-            <div class="token-path-nav">
-              <span>Settings</span>
-              <span>›</span>
-              <span>Developer Settings</span>
-              <span>›</span>
-              <span>Personal access tokens</span>
-              <span>›</span>
-              <strong>Tokens (classic)</strong>
-            </div>
-
-            <div class="token-checklist">
-              <div class="token-check-item">
-                <span class="token-check-bullet">1</span>
-                <span>Nomeie o token (ex: <em>Minicurso Git</em>)</span>
-              </div>
-              <div class="token-check-item">
-                <span class="token-check-bullet">2</span>
+            <ul class="token-steps-list">
+              <li>
+                <span class="token-step-num">1</span>
+                <span>Settings → Developer Settings → Personal access tokens → Tokens (classic)</span>
+              </li>
+              <li>
+                <span class="token-step-num">2</span>
+                <span>Clique em <strong>Generate new token (classic)</strong></span>
+              </li>
+              <li>
+                <span class="token-step-num">3</span>
+                <span>Defina um nome no campo <em>Note</em> (ex: Minicurso Git)</span>
+              </li>
+              <li>
+                <span class="token-step-num">4</span>
                 <span
                   >Marque o escopo:
-                  <code class="token-scope-tag">repo</code></span
+                  <code class="token-scope-tag">repo</code> (Acesso total a repositórios)</span
                 >
+              </li>
+              <li>
+                <span class="token-step-num">5</span>
+                <span>Copie o token gerado (<code>ghp_...</code>). Guarde bem!</span>
+              </li>
+            </ul>
+
+            <div class="token-alert-box">
+              <span class="token-alert-icon">⚠</span>
+              <span>O token não será exibido novamente após sair da página.</span>
+            </div>
+          </article>
+
+          <!-- Coluna 2: Terminal com o git push e autenticação -->
+          <article class="push-terminal-box">
+            <div class="action-header">
+              <span class="action-step-badge">NO TERMINAL</span>
+            </div>
+
+            <div class="push-term-lines">
+              <div class="term-cmd">
+                <span class="term-prompt">$</span>
+                <span>git push -u origin main</span>
               </div>
-              <div class="token-check-item">
-                <span class="token-check-bullet">3</span>
-                <span>Copie o token gerado (<code>ghp_...</code>)</span>
+              <div class="term-cmd">
+                <span class="term-prompt">Username:</span>
+                <span>seu-usuario</span>
+              </div>
+              <div class="term-cmd">
+                <span class="term-prompt">Password:</span>
+                <span>ghp_seutokenaqui...</span>
+              </div>
+              <div class="push-highlight-line">
+                Cole o token no campo de senha (os caracteres não aparecem ao colar)
+              </div>
+              <div class="push-success-line">
+                Enumerating objects: 5, done.<br />
+                To https://github.com/SEU-USER/minicurso-git-github.git<br />
+                * [new branch] &nbsp; main -&gt; main
               </div>
             </div>
 
             <p class="story-footer-quote">
-              O token substitui a senha da sua conta no terminal.
-            </p>
-          </article>
-
-          <!-- Coluna 2: Executando o Push no Terminal -->
-          <article class="push-terminal-box">
-            <div class="terminal-header-dots">
-              <span class="term-dot red"></span>
-              <span class="term-dot yellow"></span>
-              <span class="term-dot green"></span>
-            </div>
-
-            <div class="term-cmd">
-              <span class="term-prompt">$</span>
-              <span>git push origin main</span>
-            </div>
-
-            <div class="push-term-lines">
-              <span>Username: <strong>SEU-USUARIO</strong></span>
-              <div class="push-highlight-line">
-                Password: <strong>[Cole o Token (ghp_...)]</strong>
-              </div>
-            </div>
-
-            <div class="push-success-line">
-              Enumerating objects: 5, done.<br />
-              To https://github.com/SEU-USER/minicurso-git-github.git<br />
-              &nbsp; 4a91b2e..8f2c31d &nbsp;main -&gt; main
-            </div>
-
-            <p class="story-footer-quote" style="margin-top: 0.25rem">
-              Pronto! Sua correção foi enviada para o seu fork remoto.
+              Pronto! Suas alterações estão salvas e publicadas no seu repositório remoto.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Slide 14: Pull Request & Boas Práticas -->
-      <section class="slide" data-slide="14">
+      <!-- Slide 15: Pull Request & Boas Práticas -->
+      <section class="slide" data-slide="15">
         <header class="slide-header">
-          <h2 class="slide-heading">Entrega: Abrindo o Pull Request (PR)</h2>
+          <h2 class="slide-heading">Pull Request: Boas Práticas &amp; Revisão</h2>
         </header>
 
         <div class="pr-slide-grid">
-          <!-- Coluna 1: O que é e o fluxo de branches -->
+          <!-- Coluna 1: O que é o PR e boas práticas -->
           <article class="pr-flow-card">
             <div class="action-header">
-              <span class="action-step-badge">FLUXO DE INTEGRAÇÃO</span>
-              <a
-                href="https://github.com/ViniciusMBotelho/minicurso-git-github/pulls"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="repo-link-btn"
-              >
-                Ver PRs ↗
-              </a>
+              <span class="action-step-badge">COLABORAÇÃO</span>
             </div>
 
-            <div class="pr-branch-badge-row">
-              <span class="pr-branch-tag">seu-fork : main</span>
-              <span>→</span>
-              <span class="pr-branch-tag dest">repo-oficial : main</span>
-            </div>
+            <div class="pr-guidelines">
+              <div class="pr-rule-item">
+                <span class="pr-rule-num">1</span>
+                <div>
+                  <span class="pr-rule-title">Título Claro e Descritivo</span>
+                  <span class="pr-rule-desc">Use convenções (ex: <code>fix: resolve quebra no checkout</code>). Evite títulos genéricos como "ajustes".</span>
+                </div>
+              </div>
 
-            <p class="story-footer-quote">
-              O <em>Pull Request</em> é o pedido formal para que o time revise e incorpore sua solução ao código principal.
-            </p>
-          </article>
+              <div class="pr-rule-item">
+                <span class="pr-rule-num">2</span>
+                <div>
+                  <span class="pr-rule-title">Contexto na Descrição</span>
+                  <span class="pr-rule-desc">Explique o <em>motivo</em> da alteração, o que foi resolvido e instruções para testar.</span>
+                </div>
+              </div>
 
-          <!-- Coluna 2: Mockup com Boas Práticas de Título e Descrição -->
-          <article class="pr-ui-mockup">
-            <div class="pr-input-group">
-              <span class="pr-field-label">Título Semântico (O que foi feito?)</span>
-              <div class="pr-title-box">
-                <em>fix:</em> remove slide com bug de renderização no checkout
+              <div class="pr-rule-item">
+                <span class="pr-rule-num">3</span>
+                <div>
+                  <span class="pr-rule-title">Revisão por Pares</span>
+                  <span class="pr-rule-desc">Colegas revisam o código, comentam melhorias e aprovam antes da mesclagem (merge).</span>
+                </div>
               </div>
             </div>
 
-            <div class="pr-input-group">
-              <span class="pr-field-label">Descrição Objetiva (Por que e como?)</span>
-              <div class="pr-body-box">
-                <span class="pr-section-head">### Contexto</span>
-                <span>O slide 12 continha um erro visual que quebrava o fluxo.</span>
-                <span class="pr-section-head" style="margin-top: 0.2rem;">### Solução</span>
-                <span>Removida a section correspondente e validado o deck.</span>
+            <p class="story-footer-quote">
+              Um bom PR facilita a vida do revisor e acelera a entrega.
+            </p>
+          </article>
+
+          <!-- Coluna 2: Mock de abertura do PR no GitHub -->
+          <article class="pr-mock-card">
+            <div class="action-header">
+              <span class="action-step-badge">NO GITHUB</span>
+            </div>
+
+            <div class="pr-form-mock">
+              <div class="pr-input-group">
+                <span class="pr-label">Título</span>
+                <div class="pr-input-mock">fix: remove slide do bug para estabilizar dev</div>
+              </div>
+
+              <div class="pr-input-group">
+                <span class="pr-label">Descrição (Markdown)</span>
+                <div class="pr-textarea-mock">
+                  <span class="pr-desc-head">### O que foi feito:</span>
+                  <span>- Removido o elemento do bug identificado no index.html</span>
+                  <span>- Validado o fluxo da apresentação</span>
+                  <span class="pr-desc-head" style="margin-top: 0.3rem;">### Como testar:</span>
+                  <span>- Navegar pelos slides até o final</span>
+                </div>
               </div>
             </div>
 
             <div class="pr-btn-submit">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.256a2.251 2.251 0 11-1.5 0V7.5a.5.5 0 00-.5-.5h-1V5.5h1A2.5 2.5 0 0013.5 8v2.256a2.25 2.25 0 11-1.5 0V5A2 2 0 0011 2.5z"></path>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.256a2.251 2.251 0 11-1.5 0V7.5a.5.5 0 00-.5-.5h-1V5.5h1A2.5 2.5 0 0013.5 8v2.256a2.25 2.25 0 11-1.5 0V5A2 2 0 0011 2.5z"
+                ></path>
               </svg>
               Create pull request
             </div>
@@ -2940,8 +3122,8 @@
         </div>
       </section>
 
-      <!-- Slide 15: Obrigado & Encerramento -->
-      <section class="slide thanks-slide" data-slide="15">
+      <!-- Slide 16: Obrigado & Encerramento -->
+      <section class="slide thanks-slide" data-slide="16">
         <div class="thanks-badge-row">
           <span class="badge badge-git">
             <span class="badge-dot"></span>
@@ -2950,12 +3132,11 @@
           <span class="badge">Q&amp;A</span>
         </div>
 
-        <h2 class="thanks-title">
-          Muito <em>Obrigado!</em>
-        </h2>
+        <h2 class="thanks-title">Muito <em>Obrigado!</em></h2>
 
         <p class="thanks-lead">
-          Agora você tem a base essencial para versionar projetos, manter boas práticas e colaborar com o mundo.
+          Agora você tem a base essencial para versionar projetos, manter boas
+          práticas e colaborar com o mundo.
         </p>
 
         <div class="thanks-links-row">
@@ -2966,16 +3147,32 @@
             class="thanks-link-card"
           >
             <span class="thanks-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                ></path>
               </svg>
             </span>
             <span>Repositório do Projeto ↗</span>
           </a>
 
-          <div class="thanks-link-card" style="cursor: default;">
+          <div class="thanks-link-card" style="cursor: default">
             <span class="thanks-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                 <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -3041,8 +3238,12 @@
       document.querySelectorAll(".config-tab-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           const targetTabId = btn.getAttribute("data-tab");
-          document.querySelectorAll(".config-tab-btn").forEach((b) => b.classList.remove("active"));
-          document.querySelectorAll(".config-tab-pane").forEach((pane) => pane.classList.remove("active"));
+          document
+            .querySelectorAll(".config-tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".config-tab-pane")
+            .forEach((pane) => pane.classList.remove("active"));
           btn.classList.add("active");
           const targetPane = document.getElementById(targetTabId);
           if (targetPane) {
