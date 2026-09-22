@@ -25,13 +25,11 @@
         --mono-font: "JetBrains Mono", monospace;
         --body-font: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
       }
-
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
       body {
         background-color: var(--bg);
         color: var(--text-main);
@@ -43,8 +41,6 @@
         flex-direction: column;
         position: relative;
       }
-
-      /* Deck presentation container */
       .presentation-container {
         position: relative;
         z-index: 1;
@@ -55,7 +51,6 @@
         justify-content: center;
         padding: 2.5rem;
       }
-
       .slide {
         display: none;
         width: 100%;
@@ -67,11 +62,9 @@
         position: relative;
         animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       }
-
       .slide.active {
         display: flex;
       }
-
       @keyframes slideIn {
         from {
           opacity: 0;
@@ -82,20 +75,16 @@
           transform: translateY(0);
         }
       }
-
-      /* Slide 1 - Capa */
       .cover-slide {
         text-align: center;
         align-items: center;
         gap: 2.5rem;
       }
-
       .tag-container {
         display: flex;
         gap: 0.75rem;
         align-items: center;
       }
-
       .badge {
         display: inline-flex;
         align-items: center;
@@ -110,19 +99,16 @@
         font-weight: 500;
         letter-spacing: 0.02em;
       }
-
       .badge-git {
         border-color: rgba(255, 87, 51, 0.4);
         color: #ff7a59;
       }
-
       .badge-dot {
         width: 6px;
         height: 6px;
         background: #ff5733;
         border-radius: 50%;
       }
-
       .title {
         font-size: 3.75rem;
         font-weight: 800;
@@ -131,12 +117,10 @@
         color: #ffffff;
         max-width: 900px;
       }
-
       .title em {
         font-style: normal;
         color: #ff6b4a;
       }
-
       .team-section {
         display: flex;
         flex-direction: column;
@@ -144,7 +128,6 @@
         gap: 1.25rem;
         margin-top: 0.5rem;
       }
-
       .team-label {
         font-size: 0.8rem;
         text-transform: uppercase;
@@ -153,14 +136,12 @@
         font-weight: 600;
         font-family: var(--mono-font);
       }
-
       .team-cards {
         display: flex;
         gap: 1.2rem;
         flex-wrap: wrap;
         justify-content: center;
       }
-
       .member-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -173,13 +154,11 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .member-card:hover {
         transform: translateY(-2px);
         border-color: #3b4d6b;
         background: var(--surface-hover);
       }
-
       .member-initials {
         width: 32px;
         height: 32px;
@@ -194,15 +173,12 @@
         font-weight: 600;
         color: #cbd5e1;
       }
-
       .member-name {
         font-size: 1rem;
         font-weight: 600;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
-      /* Controls & Navigation UI */
       .deck-footer {
         position: absolute;
         bottom: 1.5rem;
@@ -214,14 +190,12 @@
         align-items: center;
         z-index: 10;
       }
-
       .slide-counter {
         font-size: 0.85rem;
         color: var(--text-muted);
         font-family: var(--mono-font);
         font-weight: 500;
       }
-
       .nav-hints {
         display: flex;
         align-items: center;
@@ -229,7 +203,6 @@
         color: var(--text-muted);
         font-size: 0.8rem;
       }
-
       .key-badge {
         display: inline-block;
         padding: 0.2rem 0.45rem;
@@ -240,8 +213,6 @@
         font-size: 0.75rem;
         color: #cbd5e1;
       }
-
-      /* Top progress bar */
       .progress-bar-container {
         position: absolute;
         top: 0;
@@ -251,7 +222,6 @@
         background: #161e2b;
         z-index: 20;
       }
-
       .progress-bar {
         height: 100%;
         width: 100%;
@@ -260,12 +230,9 @@
         transform: scaleX(1);
         transition: transform 0.25s ease;
       }
-
-      /* Slide Content Layout */
       .slide-header {
         margin-bottom: 2.5rem;
       }
-
       .slide-subtitle {
         font-size: 0.85rem;
         font-family: var(--mono-font);
@@ -274,21 +241,17 @@
         color: var(--accent);
         margin-bottom: 0.5rem;
       }
-
       .slide-heading {
         font-size: 2.5rem;
         font-weight: 700;
         letter-spacing: -0.025em;
         color: #ffffff;
       }
-
-      /* Goals Slide Grid */
       .goals-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-
       .goal-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -298,13 +261,11 @@
         flex-direction: column;
         gap: 1.25rem;
       }
-
       .goal-header {
         display: flex;
         align-items: center;
         gap: 0.75rem;
       }
-
       .goal-index {
         font-family: var(--mono-font);
         font-size: 0.85rem;
@@ -315,34 +276,28 @@
         padding: 0.2rem 0.6rem;
         border-radius: 6px;
       }
-
       .goal-title {
         font-size: 1.25rem;
         font-weight: 600;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
       .goal-desc {
         color: var(--text-muted);
         font-size: 1.05rem;
         line-height: 1.6;
       }
-
       .goal-tags {
         margin-top: auto;
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
       }
-
-      /* Slide 3: Sumário & Conteúdo Programático */
       .summary-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
-
       .roadmap-item {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -355,19 +310,16 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .roadmap-item:hover {
         transform: translateY(-2px);
         border-color: #3b4d6b;
         background: var(--surface-hover);
       }
-
       .roadmap-main {
         display: flex;
         align-items: center;
         gap: 0.75rem;
       }
-
       .step-num {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -377,14 +329,12 @@
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
       }
-
       .step-title {
         font-size: 1.05rem;
         font-weight: 600;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
       .step-commands {
         font-family: var(--mono-font);
         font-size: 0.8rem;
@@ -395,16 +345,12 @@
         border-radius: 6px;
         align-self: flex-start;
       }
-
-      /* Slide 4: Metáfora Git vs GitHub & Criação com Google */
       .visual-slide-grid {
         display: grid;
         grid-template-columns: 1.4fr 1fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
-      /* Visual Metaphor Diagram */
       .metaphor-box {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -415,7 +361,6 @@
         justify-content: space-between;
         gap: 1.5rem;
       }
-
       .metaphor-diagram {
         display: flex;
         align-items: center;
@@ -424,7 +369,6 @@
         height: 100%;
         min-height: 240px;
       }
-
       .diagram-node {
         flex: 1;
         background: #0f1521;
@@ -438,7 +382,6 @@
         gap: 0.75rem;
         position: relative;
       }
-
       .node-icon-box {
         width: 56px;
         height: 56px;
@@ -450,17 +393,14 @@
         justify-content: center;
         color: #ff6b4a;
       }
-
       .node-icon-github {
         color: #a78bfa;
       }
-
       .node-title {
         font-size: 1.1rem;
         font-weight: 700;
         color: #f1f5f9;
       }
-
       .node-metaphor-badge {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -471,33 +411,28 @@
         border: 1px solid rgba(255, 107, 74, 0.25);
         color: #ff8566;
       }
-
       .node-metaphor-github {
         background: rgba(167, 139, 250, 0.12);
         border-color: rgba(167, 139, 250, 0.25);
         color: #c4b5fd;
       }
-
       .node-tagline {
         font-size: 0.82rem;
         color: var(--text-muted);
         line-height: 1.35;
       }
-
       .diagram-connector {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.4rem;
       }
-
       .connector-line {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.25rem;
       }
-
       .connector-badge {
         font-family: var(--mono-font);
         font-size: 0.7rem;
@@ -508,8 +443,6 @@
         border-radius: 4px;
         white-space: nowrap;
       }
-
-      /* Google Institutional Signup Card */
       .google-auth-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -520,7 +453,6 @@
         justify-content: space-between;
         gap: 1.25rem;
       }
-
       .auth-title {
         font-size: 1.1rem;
         font-weight: 700;
@@ -529,7 +461,6 @@
         align-items: center;
         gap: 0.6rem;
       }
-
       .google-mock-btn {
         background: #ffffff;
         color: #1f2937;
@@ -548,17 +479,14 @@
           background-color 0.15s ease;
         cursor: pointer;
       }
-
       .google-mock-btn:hover {
         background-color: #f3f4f6;
         transform: translateY(-2px);
       }
-
       .google-icon-svg {
         width: 20px;
         height: 20px;
       }
-
       .inst-callout {
         background: #0d1420;
         border: 1px solid var(--border);
@@ -568,22 +496,18 @@
         align-items: center;
         gap: 0.75rem;
       }
-
       .inst-callout-icon {
         color: var(--accent);
         flex-shrink: 0;
       }
-
       .inst-callout-text {
         font-size: 0.82rem;
         color: #cbd5e1;
         line-height: 1.4;
       }
-
       .inst-callout-text strong {
         color: #ffffff;
       }
-
       .auth-url-badge {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -599,20 +523,16 @@
           border-color 0.15s ease,
           color 0.15s ease;
       }
-
       .auth-url-badge:hover {
         border-color: #3b4d6b;
         color: #f1f5f9;
       }
-
-      /* Slide 5: Storytelling - Primeiro Dia na Empresa & O Bug */
       .story-hero-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.75rem;
         align-items: stretch;
       }
-
       .story-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -623,13 +543,11 @@
         justify-content: space-between;
         gap: 1.25rem;
       }
-
       .story-badge-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-
       .story-pill {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -640,13 +558,11 @@
         border: 1px solid var(--border);
         color: #94a3b8;
       }
-
       .story-pill.alert {
         background: rgba(255, 87, 51, 0.12);
         border-color: rgba(255, 87, 51, 0.3);
         color: #ff7a59;
       }
-
       .story-art {
         display: flex;
         align-items: center;
@@ -657,19 +573,16 @@
         border: 1px solid var(--border-subtle);
         min-height: 190px;
       }
-
       .story-footer-quote {
         font-size: 1.15rem;
         font-weight: 600;
         color: #f1f5f9;
         line-height: 1.4;
       }
-
       .story-footer-quote em {
         font-style: normal;
         color: var(--accent);
       }
-
       .code-snippet-box {
         width: 100%;
         background: #070c14;
@@ -682,17 +595,14 @@
         flex-direction: column;
         gap: 0.4rem;
       }
-
       .code-line {
         display: flex;
         gap: 0.75rem;
       }
-
       .code-ln {
         color: #475569;
         user-select: none;
       }
-
       .code-danger {
         color: #f87171;
         background: rgba(248, 113, 113, 0.1);
@@ -700,15 +610,12 @@
         border-radius: 4px;
         width: 100%;
       }
-
-      /* Slide 6: Fork & Clone Local */
       .fork-clone-grid {
         display: grid;
         grid-template-columns: 1fr 1.15fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .fork-step-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -719,13 +626,11 @@
         justify-content: space-between;
         gap: 1.25rem;
       }
-
       .action-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-
       .action-step-badge {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -736,7 +641,6 @@
         border-radius: 4px;
         border: 1px solid rgba(255, 87, 51, 0.3);
       }
-
       .repo-link-btn {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -750,13 +654,10 @@
           border-color 0.15s ease,
           background-color 0.15s ease;
       }
-
       .repo-link-btn:hover {
         border-color: #3b82f6;
         background: #111e33;
       }
-
-      /* GitHub Fork Visual Simulation */
       .gh-mock-ui {
         background: #090d14;
         border: 1px solid var(--border);
@@ -766,7 +667,6 @@
         flex-direction: column;
         gap: 0.85rem;
       }
-
       .gh-mock-topbar {
         display: flex;
         align-items: center;
@@ -775,7 +675,6 @@
         font-size: 0.78rem;
         color: #cbd5e1;
       }
-
       .fork-target-btn {
         display: inline-flex;
         align-items: center;
@@ -788,11 +687,9 @@
         font-weight: 600;
         font-size: 0.78rem;
       }
-
       .fork-target-btn svg {
         color: #8b949e;
       }
-
       .fork-pointer-callout {
         display: flex;
         align-items: center;
@@ -804,8 +701,6 @@
         border-radius: 6px;
         border: 1px solid var(--border);
       }
-
-      /* Terminal Execution Box */
       .terminal-frame {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -816,20 +711,17 @@
         gap: 0.75rem;
         font-family: var(--mono-font);
       }
-
       .terminal-header-dots {
         display: flex;
         gap: 0.4rem;
         margin-bottom: 0.25rem;
       }
-
       .term-dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background: #273349;
       }
-
       .term-dot.red {
         background: #ef4444;
       }
@@ -839,7 +731,6 @@
       .term-dot.green {
         background: #22c55e;
       }
-
       .term-cmd {
         font-size: 0.84rem;
         color: #f1f5f9;
@@ -851,33 +742,27 @@
         border-radius: 6px;
         border: 1px solid #1e293b;
       }
-
       .term-prompt {
         color: #22c55e;
         user-select: none;
       }
-
       .term-output {
         font-size: 0.78rem;
         color: #94a3b8;
         line-height: 1.5;
         padding-left: 0.2rem;
       }
-
-      /* Slide 7: Metáfora das Branches */
       .metaphor-full-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .metaphor-gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
       }
-
       .tree-photo-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -886,27 +771,23 @@
         display: flex;
         height: 290px;
       }
-
       .tree-photo-wrap {
         width: 100%;
         height: 100%;
         background: #090d14;
       }
-
       .tree-photo-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
-
       .metaphor-pillars-column {
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
         justify-content: space-between;
       }
-
       .pillar-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -919,12 +800,10 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .pillar-card:hover {
         transform: translateX(4px);
         border-color: #3b4d6b;
       }
-
       .pillar-icon-box {
         width: 44px;
         height: 44px;
@@ -936,32 +815,26 @@
         justify-content: center;
         flex-shrink: 0;
       }
-
       .pillar-leaf {
         color: #4ade80;
       }
-
       .pillar-branch {
         color: #38bdf8;
       }
-
       .pillar-trunk {
         color: #f97316;
       }
-
       .pillar-text-group {
         display: flex;
         align-items: baseline;
         gap: 0.75rem;
       }
-
       .pillar-name {
         font-size: 1.15rem;
         font-weight: 700;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
       .pillar-git-tag {
         font-family: var(--mono-font);
         font-size: 0.82rem;
@@ -972,15 +845,12 @@
         border: 1px solid var(--border);
         color: #94a3b8;
       }
-
-      /* Slide 8: Inspeção & Rastreamento (git status) */
       .status-split-grid {
         display: grid;
         grid-template-columns: 1.15fr 1fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .terminal-status-box {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -991,7 +861,6 @@
         gap: 0.85rem;
         font-family: var(--mono-font);
       }
-
       .status-term-output {
         font-size: 0.8rem;
         line-height: 1.6;
@@ -999,40 +868,32 @@
         flex-direction: column;
         gap: 0.2rem;
       }
-
       .status-line-head {
         color: #f1f5f9;
         font-weight: 600;
       }
-
       .status-line-muted {
         color: #94a3b8;
         font-size: 0.74rem;
       }
-
       .status-line-untracked {
         color: #f87171;
         padding-left: 1.2rem;
       }
-
       .status-line-modified {
         color: #fb923c;
         padding-left: 1.2rem;
       }
-
       .status-line-staged {
         color: #4ade80;
         padding-left: 1.2rem;
       }
-
-      /* Estados de Rastreamento (Lifecycle Cards) */
       .status-states-column {
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
         justify-content: space-between;
       }
-
       .state-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1045,45 +906,37 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .state-card:hover {
         transform: translateX(4px);
         border-color: #3b4d6b;
       }
-
       .state-dot-indicator {
         width: 12px;
         height: 12px;
         border-radius: 50%;
         flex-shrink: 0;
       }
-
       .dot-untracked {
         background: #ef4444;
       }
-
       .dot-modified {
         background: #f97316;
       }
-
       .dot-staged {
         background: #22c55e;
       }
-
       .state-info {
         display: flex;
         align-items: baseline;
         gap: 0.75rem;
         flex-wrap: wrap;
       }
-
       .state-title {
         font-size: 1.1rem;
         font-weight: 700;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
       .state-label {
         font-family: var(--mono-font);
         font-size: 0.78rem;
@@ -1094,15 +947,12 @@
         border: 1px solid var(--border);
         color: #cbd5e1;
       }
-
-      /* Slide 9: Histórico & Linha do Tempo (git log) */
       .log-slide-grid {
         display: grid;
         grid-template-columns: 1.25fr 0.9fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .terminal-log-box {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -1113,14 +963,12 @@
         gap: 0.85rem;
         font-family: var(--mono-font);
       }
-
       .log-entries-list {
         display: flex;
         flex-direction: column;
         gap: 0.9rem;
         font-size: 0.8rem;
       }
-
       .log-entry {
         display: flex;
         flex-direction: column;
@@ -1129,23 +977,19 @@
         padding-left: 1.25rem;
         border-left: 2px solid #233044;
       }
-
       .log-entry.latest {
         border-left-color: var(--accent);
       }
-
       .log-commit-line {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         flex-wrap: wrap;
       }
-
       .log-hash {
         color: #eab308;
         font-weight: 600;
       }
-
       .log-head-tag {
         font-size: 0.7rem;
         background: #0369a1;
@@ -1154,26 +998,21 @@
         border-radius: 4px;
         font-weight: 500;
       }
-
       .log-meta-line {
         font-size: 0.73rem;
         color: #94a3b8;
       }
-
       .log-msg-line {
         color: #f1f5f9;
         font-weight: 500;
         margin-top: 0.1rem;
       }
-
-      /* Coluna de Flags e Visualizações Úteis */
       .log-tools-column {
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
         justify-content: space-between;
       }
-
       .log-tool-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1186,24 +1025,20 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .log-tool-card:hover {
         transform: translateX(4px);
         border-color: #3b4d6b;
       }
-
       .tool-badge-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-
       .tool-name {
         font-size: 1.05rem;
         font-weight: 700;
         color: #f1f5f9;
       }
-
       .tool-cmd-snippet {
         font-family: var(--mono-font);
         font-size: 0.8rem;
@@ -1214,15 +1049,12 @@
         border-radius: 6px;
         align-self: flex-start;
       }
-
-      /* Slide 10: Mão na Massa - O Ciclo de Commit */
       .handson-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.2rem;
         align-items: stretch;
       }
-
       .handson-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1236,24 +1068,20 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .handson-card:hover {
         transform: translateY(-3px);
         border-color: #3b4d6b;
       }
-
       .handson-top {
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
       }
-
       .handson-badge-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-
       .handson-step-num {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -1264,14 +1092,12 @@
         border-radius: 4px;
         border: 1px solid rgba(255, 87, 51, 0.3);
       }
-
       .handson-title {
         font-size: 1.1rem;
         font-weight: 700;
         color: #f1f5f9;
         letter-spacing: -0.01em;
       }
-
       .handson-cmd-box {
         background: #070b12;
         border: 1px solid #1a2436;
@@ -1285,27 +1111,21 @@
         gap: 0.45rem;
         overflow-x: auto;
       }
-
       .handson-cmd-box span {
         white-space: nowrap;
       }
-
       .handson-prompt {
         color: #22c55e;
         user-select: none;
       }
-
       .handson-tagline {
         font-size: 0.82rem;
         color: #94a3b8;
         line-height: 1.4;
       }
-
       .handson-tagline strong {
         color: #e2e8f0;
       }
-
-      /* Slide 11: Slide do Bug (A ser deletado pelos alunos) */
       .bug-slide-content {
         display: flex;
         flex-direction: column;
@@ -1314,7 +1134,6 @@
         gap: 1.5rem;
         text-align: center;
       }
-
       .bug-photo-frame {
         width: 280px;
         height: 280px;
@@ -1323,14 +1142,12 @@
         border: 2px solid rgba(248, 113, 113, 0.4);
         background: #090d14;
       }
-
       .bug-photo-frame img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
-
       .bug-mission-badge {
         font-family: var(--mono-font);
         font-size: 0.85rem;
@@ -1341,15 +1158,12 @@
         padding: 0.35rem 0.85rem;
         border-radius: 6px;
       }
-
-      /* Slide 12: Token de Acesso (PAT) & Git Push */
       .token-slide-grid {
         display: grid;
         grid-template-columns: 1.15fr 1fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .token-steps-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1360,7 +1174,6 @@
         justify-content: space-between;
         gap: 1.1rem;
       }
-
       .token-path-nav {
         display: flex;
         align-items: center;
@@ -1374,17 +1187,14 @@
         border-radius: 6px;
         flex-wrap: wrap;
       }
-
       .token-path-nav strong {
         color: #38bdf8;
       }
-
       .token-checklist {
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
       }
-
       .token-check-item {
         display: flex;
         align-items: center;
@@ -1392,7 +1202,6 @@
         font-size: 0.88rem;
         color: #e2e8f0;
       }
-
       .token-check-bullet {
         width: 20px;
         height: 20px;
@@ -1408,7 +1217,6 @@
         color: var(--accent);
         flex-shrink: 0;
       }
-
       .token-scope-tag {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -1419,8 +1227,6 @@
         border-radius: 4px;
         font-weight: 600;
       }
-
-      /* Terminal Push Box */
       .push-terminal-box {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -1432,14 +1238,12 @@
         gap: 1rem;
         font-family: var(--mono-font);
       }
-
       .push-term-lines {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         font-size: 0.8rem;
       }
-
       .push-highlight-line {
         color: #f87171;
         background: rgba(248, 113, 113, 0.08);
@@ -1448,29 +1252,24 @@
         border: 1px solid rgba(248, 113, 113, 0.2);
         font-size: 0.76rem;
       }
-
       .push-success-line {
         color: #4ade80;
         font-size: 0.76rem;
         line-height: 1.5;
         padding-left: 0.2rem;
       }
-
-      /* Slide: Identidade & Configuração (git config) */
       .config-tabs-container {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
         width: 100%;
       }
-
       .config-tabs-nav {
         display: flex;
         gap: 0.75rem;
         border-bottom: 1px solid var(--border);
         padding-bottom: 0.75rem;
       }
-
       .config-tab-btn {
         background: transparent;
         border: 1px solid transparent;
@@ -1489,33 +1288,27 @@
           color 0.15s ease,
           border-color 0.15s ease;
       }
-
       .config-tab-btn:hover {
         color: var(--text-main);
         background: var(--surface);
       }
-
       .config-tab-btn.active {
         background: var(--surface);
         border-color: var(--border);
         color: #38bdf8;
       }
-
       .config-tab-pane {
         display: none;
       }
-
       .config-tab-pane.active {
         display: block;
       }
-
       .config-slide-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .config-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1526,7 +1319,6 @@
         justify-content: space-between;
         gap: 1.25rem;
       }
-
       .config-badge {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -1537,25 +1329,21 @@
         color: #38bdf8;
         border: 1px solid rgba(56, 189, 248, 0.3);
       }
-
       .config-badge.flag {
         background: var(--accent-soft);
         color: var(--accent);
         border-color: rgba(255, 87, 51, 0.3);
       }
-
       .config-cmds-box {
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
       }
-
       .scope-info-box {
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
       }
-
       .scope-item {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -1565,21 +1353,18 @@
         flex-direction: column;
         gap: 0.35rem;
       }
-
       .scope-target {
         font-family: var(--mono-font);
         font-size: 0.82rem;
         font-weight: 700;
         color: #38bdf8;
       }
-
       .scope-text {
         font-size: 0.84rem;
         color: var(--text-muted);
         line-height: 1.45;
         margin: 0;
       }
-
       .scope-text code {
         color: #f1f5f9;
         background: rgba(255, 255, 255, 0.06);
@@ -1588,14 +1373,12 @@
         font-family: var(--mono-font);
         font-size: 0.8rem;
       }
-
       .config-list-grid {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .config-list-term {
         background: #080c14;
         border: 1px solid #1f293d;
@@ -1606,7 +1389,6 @@
         gap: 0.85rem;
         font-family: var(--mono-font);
       }
-
       .config-list-output {
         font-size: 0.8rem;
         line-height: 1.6;
@@ -1615,18 +1397,15 @@
         gap: 0.2rem;
         color: #94a3b8;
       }
-
       .config-list-output strong {
         color: #f1f5f9;
       }
-
       .config-scopes-list {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
         justify-content: space-between;
       }
-
       .config-scope-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1636,33 +1415,27 @@
         flex-direction: column;
         gap: 0.4rem;
       }
-
       .config-scope-head {
         display: flex;
         align-items: center;
         gap: 0.6rem;
       }
-
       .config-scope-title {
         font-size: 0.98rem;
         font-weight: 700;
         color: #f1f5f9;
       }
-
       .config-scope-desc {
         font-size: 0.82rem;
         color: var(--text-muted);
         line-height: 1.4;
       }
-
-      /* Slide 14: Pull Request & Boas Práticas */
       .pr-slide-grid {
         display: grid;
         grid-template-columns: 1fr 1.25fr;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .pr-flow-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1673,7 +1446,6 @@
         justify-content: space-between;
         gap: 1.1rem;
       }
-
       .pr-branch-badge-row {
         display: flex;
         align-items: center;
@@ -1687,7 +1459,6 @@
         color: #cbd5e1;
         flex-wrap: wrap;
       }
-
       .pr-branch-tag {
         background: rgba(56, 189, 248, 0.12);
         color: #38bdf8;
@@ -1696,13 +1467,11 @@
         border-radius: 4px;
         font-weight: 600;
       }
-
       .pr-branch-tag.dest {
         background: rgba(34, 197, 94, 0.12);
         color: #4ade80;
         border-color: rgba(34, 197, 94, 0.3);
       }
-
       .pr-ui-mockup {
         background: #090e17;
         border: 1px solid var(--border);
@@ -1713,19 +1482,16 @@
         gap: 0.85rem;
         font-family: var(--mono-font);
       }
-
       .pr-input-group {
         display: flex;
         flex-direction: column;
         gap: 0.35rem;
       }
-
       .pr-field-label {
         font-size: 0.78rem;
         color: #94a3b8;
         font-weight: 500;
       }
-
       .pr-title-box {
         background: #0f1624;
         border: 1px solid var(--border);
@@ -1735,12 +1501,10 @@
         color: #f1f5f9;
         font-weight: 600;
       }
-
       .pr-title-box em {
         font-style: normal;
         color: var(--accent);
       }
-
       .pr-body-box {
         background: #0f1624;
         border: 1px solid var(--border);
@@ -1753,12 +1517,10 @@
         flex-direction: column;
         gap: 0.3rem;
       }
-
       .pr-section-head {
         color: #38bdf8;
         font-weight: 600;
       }
-
       .pr-btn-submit {
         display: inline-flex;
         align-items: center;
@@ -1773,20 +1535,16 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         align-self: flex-end;
       }
-
-      /* Slide 15: Obrigado & Encerramento */
       .thanks-slide {
         text-align: center;
         align-items: center;
         gap: 2rem;
       }
-
       .thanks-badge-row {
         display: flex;
         align-items: center;
         gap: 0.6rem;
       }
-
       .thanks-title {
         font-size: 4rem;
         font-weight: 800;
@@ -1794,19 +1552,16 @@
         line-height: 1.1;
         color: #ffffff;
       }
-
       .thanks-title em {
         font-style: normal;
         color: #ff6b4a;
       }
-
       .thanks-lead {
         font-size: 1.2rem;
         color: #94a3b8;
         max-width: 650px;
         line-height: 1.5;
       }
-
       .thanks-links-row {
         display: flex;
         gap: 1.25rem;
@@ -1814,7 +1569,6 @@
         justify-content: center;
         margin-top: 0.5rem;
       }
-
       .thanks-link-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1832,27 +1586,22 @@
           border-color 0.15s ease,
           background-color 0.15s ease;
       }
-
       .thanks-link-card:hover {
         transform: translateY(-2px);
         border-color: #3b4d6b;
         background: var(--surface-hover);
       }
-
       .thanks-icon {
         color: #ff6b4a;
         display: flex;
         align-items: center;
       }
-
-      /* Slide: Comandos de Branch */
       .branch-cmds-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.2rem;
         align-items: stretch;
       }
-
       .branch-cmd-card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -1866,18 +1615,15 @@
           transform 0.15s ease,
           border-color 0.15s ease;
       }
-
       .branch-cmd-card:hover {
         transform: translateY(-3px);
         border-color: #3b4d6b;
       }
-
       .branch-badge-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-
       .branch-step-badge {
         font-family: var(--mono-font);
         font-size: 0.75rem;
@@ -1888,11 +1634,99 @@
         border-radius: 4px;
         border: 1px solid rgba(56, 189, 248, 0.3);
       }
-
       .branch-step-badge.flag {
         color: var(--accent);
         background: var(--accent-soft);
         border-color: rgba(255, 87, 51, 0.3);
+      }
+      .roadmap-grid-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.1rem;
+        width: 100%;
+      }
+      .roadmap-step-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.15rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.85rem;
+        min-height: 155px;
+        transition: transform 0.15s ease, border-color 0.15s ease;
+      }
+      .roadmap-step-card:hover {
+        transform: translateY(-2px);
+        border-color: #3b4d6b;
+      }
+      .roadmap-step-card.active-target {
+        border-color: rgba(255, 87, 51, 0.45);
+        background: linear-gradient(180deg, rgba(255, 87, 51, 0.08) 0%, var(--surface) 100%);
+      }
+      .roadmap-step-top {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .roadmap-step-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .roadmap-step-badge {
+        font-family: var(--mono-font);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #38bdf8;
+        background: rgba(56, 189, 248, 0.12);
+        padding: 0.15rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .roadmap-step-badge.highlight {
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-color: rgba(255, 87, 51, 0.35);
+      }
+      .roadmap-step-order {
+        font-family: var(--mono-font);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+      .roadmap-step-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #f1f5f9;
+        letter-spacing: -0.01em;
+      }
+      .roadmap-cmd-snippet {
+        background: #080c14;
+        border: 1px solid #1f293d;
+        border-radius: 6px;
+        padding: 0.45rem 0.65rem;
+        font-family: var(--mono-font);
+        font-size: 0.8rem;
+        color: #7dd3fc;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .roadmap-cmd-snippet span.prompt {
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .roadmap-cmds-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .roadmap-step-desc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.45;
       }
     </style>
   </head>
@@ -1902,7 +1736,7 @@
     </div>
 
     <main class="presentation-container">
-      <!-- Slide 1: Apresentação -->
+      
       <section class="slide cover-slide active" data-slide="1">
         <div class="tag-container">
           <span class="badge badge-git">
@@ -1935,7 +1769,7 @@
         </div>
       </section>
 
-      <!-- Slide 2: Objetivos Esperados -->
+      
       <section class="slide" data-slide="2">
         <header class="slide-header">
           <h2 class="slide-heading">Objetivos do Minicurso</h2>
@@ -1968,7 +1802,7 @@
         </div>
       </section>
 
-      <!-- Slide 3: Sumário & Conteúdo Programático -->
+      
       <section class="slide" data-slide="3">
         <header class="slide-header">
           <h2 class="slide-heading">Conteúdo Programático</h2>
@@ -2031,17 +1865,17 @@
         </div>
       </section>
 
-      <!-- Slide 4: Fundamentos & Criação de Conta -->
+      
       <section class="slide" data-slide="4">
         <header class="slide-header">
           <h2 class="slide-heading">Git × GitHub &amp; Primeiros Passos</h2>
         </header>
 
         <div class="visual-slide-grid">
-          <!-- Metáfora Visual: Git (Motor/Diário de Bordo) vs GitHub (Porto/Hub Global) -->
+          
           <div class="metaphor-box">
             <div class="metaphor-diagram">
-              <!-- Node Git -->
+              
               <div class="diagram-node">
                 <div class="node-icon-box">
                   <svg
@@ -2064,7 +1898,7 @@
                 <span class="node-metaphor-badge">Local</span>
               </div>
 
-              <!-- Conector Sincronização -->
+              
               <div class="diagram-connector">
                 <svg
                   width="32"
@@ -2079,7 +1913,7 @@
                 </svg>
               </div>
 
-              <!-- Node GitHub -->
+              
               <div class="diagram-node">
                 <div class="node-icon-box node-icon-github">
                   <svg
@@ -2103,7 +1937,7 @@
             </div>
           </div>
 
-          <!-- Coluna 2: Criação com Conta Google Institucional -->
+          
           <aside class="google-auth-card">
             <div class="auth-title">
               <svg
@@ -2182,14 +2016,14 @@
         </div>
       </section>
 
-      <!-- Slide 5: Início do Storytelling - O Cenário & O Bug -->
+      
       <section class="slide" data-slide="5">
         <header class="slide-header">
           <h2 class="slide-heading">Cenário: Seu Primeiro Dia na Empresa</h2>
         </header>
 
         <div class="story-hero-grid">
-          <!-- Card 1: Chegada na empresa / Setup -->
+          
           <article class="story-card">
             <div class="story-badge-row">
               <span class="story-pill">MISSÃO 01</span>
@@ -2220,7 +2054,7 @@
             </p>
           </article>
 
-          <!-- Card 2: Alerta de Bug no ambiente de desenvolvimento -->
+          
           <article class="story-card">
             <div class="story-badge-row">
               <span class="story-pill alert">ALERTA</span>
@@ -2254,14 +2088,14 @@
         </div>
       </section>
 
-      <!-- Slide 6: Obtendo o Código - Fork & Clone -->
+      
       <section class="slide" data-slide="6">
         <header class="slide-header">
           <h2 class="slide-heading">Obtendo o Projeto: Fork &amp; Clone</h2>
         </header>
 
         <div class="fork-clone-grid">
-          <!-- Etapa 1: Fork na nuvem -->
+          
           <article class="fork-step-card">
             <div class="action-header">
               <span class="action-step-badge">PASSO 1 · NO GITHUB</span>
@@ -2307,7 +2141,7 @@
             </p>
           </article>
 
-          <!-- Etapa 2: Clone no terminal local -->
+          
           <article class="fork-step-card">
             <div class="action-header">
               <span class="action-step-badge">PASSO 2 · NO TERMINAL</span>
@@ -2343,7 +2177,7 @@
         </div>
       </section>
 
-      <!-- Slide: Identidade & Configuração (git config) -->
+      
       <section class="slide" data-slide="7">
         <header class="slide-header">
           <h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
@@ -2367,10 +2201,10 @@
             </button>
           </nav>
 
-          <!-- Aba 1: Configuração Local -->
+          
           <div class="config-tab-pane active" id="tab-config-identidade">
             <div class="config-slide-grid">
-              <!-- Card: Definindo Nome e Email com --local -->
+              
               <article class="config-card">
                 <div class="action-header">
                   <span class="config-badge">COMANDOS NO REPOSITÓRIO</span>
@@ -2396,7 +2230,7 @@
                 </p>
               </article>
 
-              <!-- Card: Por que usar --local -->
+              
               <article class="config-card">
                 <div class="action-header">
                   <span class="config-badge flag">ESCOPO DESTA PASTA</span>
@@ -2428,10 +2262,10 @@
             </div>
           </div>
 
-          <!-- Aba 2: Inspeção e Escopos com git config --list -->
+          
           <div class="config-tab-pane" id="tab-config-list">
             <div class="config-list-grid">
-              <!-- Terminal simulando a saída de git config --list -->
+              
               <div class="config-list-term">
                 <div class="terminal-header-dots">
                   <span class="term-dot red"></span>
@@ -2456,7 +2290,7 @@
                 </div>
               </div>
 
-              <!-- Escopos e precedência -->
+              
               <div class="config-scopes-list">
                 <div class="config-scope-card">
                   <div class="config-scope-head">
@@ -2496,7 +2330,7 @@
         </div>
       </section>
 
-      <!-- Slide 8: Metáfora das Branches -->
+      
       <section class="slide" data-slide="8">
         <header class="slide-header">
           <h2 class="slide-heading">
@@ -2505,7 +2339,7 @@
         </header>
 
         <div class="metaphor-full-grid">
-          <!-- Galeria com as duas fotos reais da planta -->
+          
           <div class="metaphor-gallery">
             <div class="tree-photo-card">
               <div class="tree-photo-wrap">
@@ -2525,9 +2359,9 @@
             </div>
           </div>
 
-          <!-- Pilares conceituais limpos para ancorar a explicação falada -->
+          
           <div class="metaphor-pillars-column">
-            <!-- Folha = Commit -->
+            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-leaf">
                 <svg
@@ -2554,7 +2388,7 @@
               </div>
             </div>
 
-            <!-- Ramo = Branch -->
+            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-branch">
                 <svg
@@ -2579,7 +2413,7 @@
               </div>
             </div>
 
-            <!-- Tronco = Projeto Final / Main -->
+            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-trunk">
                 <svg
@@ -2607,14 +2441,14 @@
         </div>
       </section>
 
-      <!-- Slide 9: Comandos Essenciais de Branches -->
+      
       <section class="slide" data-slide="9">
         <header class="slide-header">
           <h2 class="slide-heading">Branches na Prática: Comandos Essenciais</h2>
         </header>
 
         <div class="branch-cmds-grid">
-          <!-- Card 1: Criar nova branch -->
+          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2631,7 +2465,7 @@
             </p>
           </article>
 
-          <!-- Card 2: Trocar de branch -->
+          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2648,7 +2482,7 @@
             </p>
           </article>
 
-          <!-- Card 3: Criar e trocar ao mesmo tempo -->
+          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2665,7 +2499,7 @@
             </p>
           </article>
 
-          <!-- Card 4: Listar branches -->
+          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2684,14 +2518,14 @@
         </div>
       </section>
 
-      <!-- Slide 10: Inspeção & Rastreamento (git status) -->
+      
       <section class="slide" data-slide="10">
         <header class="slide-header">
           <h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
         </header>
 
         <div class="status-split-grid">
-          <!-- Terminal com execução real do git status -->
+          
           <article class="terminal-status-box">
             <div class="terminal-header-dots">
               <span class="term-dot red"></span>
@@ -2723,9 +2557,9 @@
             </div>
           </article>
 
-          <!-- As 3 zonas visuais de rastreamento -->
+          
           <div class="status-states-column">
-            <!-- Untracked -->
+            
             <div class="state-card">
               <span class="state-dot-indicator dot-untracked"></span>
               <div class="state-info">
@@ -2734,7 +2568,7 @@
               </div>
             </div>
 
-            <!-- Modified -->
+            
             <div class="state-card">
               <span class="state-dot-indicator dot-modified"></span>
               <div class="state-info">
@@ -2743,7 +2577,7 @@
               </div>
             </div>
 
-            <!-- Staged -->
+            
             <div class="state-card">
               <span class="state-dot-indicator dot-staged"></span>
               <div class="state-info">
@@ -2755,14 +2589,14 @@
         </div>
       </section>
 
-      <!-- Slide 11: Histórico & Linha do Tempo (git log) -->
+      
       <section class="slide" data-slide="11">
         <header class="slide-header">
           <h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
         </header>
 
         <div class="log-slide-grid">
-          <!-- Terminal com visualização em árvore/lista de commits -->
+          
           <article class="terminal-log-box">
             <div class="terminal-header-dots">
               <span class="term-dot red"></span>
@@ -2776,7 +2610,7 @@
             </div>
 
             <div class="log-entries-list">
-              <!-- Commit 3 (Latest) -->
+              
               <div class="log-entry latest">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 8f2c31d</span>
@@ -2790,7 +2624,7 @@
                 >
               </div>
 
-              <!-- Commit 2 -->
+              
               <div class="log-entry">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 4a91b2e</span>
@@ -2803,7 +2637,7 @@
                 >
               </div>
 
-              <!-- Commit 1 -->
+              
               <div class="log-entry">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 1b04c8f</span>
@@ -2818,21 +2652,21 @@
             </div>
           </article>
 
-          <!-- Variações e Visualizações Rápidas -->
+          
           <div class="log-tools-column">
-            <!-- Visualização Compacta -->
+            
             <div class="log-tool-card">
               <span class="tool-name">Resumo Compacto</span>
               <span class="tool-cmd-snippet">git log --oneline</span>
             </div>
 
-            <!-- Gráfico de Branches -->
+            
             <div class="log-tool-card">
               <span class="tool-name">Árvore Visual</span>
               <span class="tool-cmd-snippet">git log --graph --oneline</span>
             </div>
 
-            <!-- Filtragem por Quantidade -->
+            
             <div class="log-tool-card">
               <span class="tool-name">Últimos Commits</span>
               <span class="tool-cmd-snippet">git log -n 3</span>
@@ -2841,14 +2675,14 @@
         </div>
       </section>
 
-      <!-- Slide 12: Mão na Massa - Ciclo de Correção do Bug -->
+      
       <section class="slide" data-slide="12">
         <header class="slide-header">
           <h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
         </header>
 
         <div class="handson-grid">
-          <!-- Passo 1: .gitignore -->
+          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2866,7 +2700,7 @@
             </p>
           </article>
 
-          <!-- Passo 2: git diff -->
+          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2884,7 +2718,7 @@
             </p>
           </article>
 
-          <!-- Passo 3: git add -->
+          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2902,7 +2736,7 @@
             </p>
           </article>
 
-          <!-- Passo 4: git commit -->
+          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2922,10 +2756,10 @@
         </div>
       </section>
 
-      <!-- ============================================================= -->
+      
       <!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
       <!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
-      <!-- ============================================================= -->
+      
       <section class="slide" data-slide="13" id="bugSlide">
         <header class="slide-header" style="text-align: center">
           <h2 class="slide-heading">BUG ENCONTRADO!</h2>
@@ -2945,8 +2779,131 @@
       </section>
       <!-- =============================APAGUE ATE AQUI================================ -->
 
-      <!-- Slide 14: Autenticação via Token (PAT) & Git Push -->
+      
       <section class="slide" data-slide="14">
+        <header class="slide-header">
+          <h2 class="slide-heading">Roadmap: O Caminho da Resolução</h2>
+        </header>
+
+        <div class="roadmap-grid-layout">
+          
+          <article class="roadmap-step-card">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge">OBTER</span>
+                <span class="roadmap-step-order">PASSO 01</span>
+              </div>
+              <h3 class="roadmap-step-title">Fork &amp; Clone</h3>
+              <div class="roadmap-cmd-snippet">
+                <span class="prompt">$</span>
+                <span>git clone &lt;repo&gt;</span>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Crie sua cópia no GitHub e traga o código para a sua máquina.
+            </p>
+          </article>
+
+          
+          <article class="roadmap-step-card">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge">AUTORIA</span>
+                <span class="roadmap-step-order">PASSO 02</span>
+              </div>
+              <h3 class="roadmap-step-title">Configurar</h3>
+              <div class="roadmap-cmds-stack">
+                <div class="roadmap-cmd-snippet">
+                  <span class="prompt">$</span>
+                  <span>git config --local user.name "Nome"</span>
+                </div>
+                <div class="roadmap-cmd-snippet">
+                  <span class="prompt">$</span>
+                  <span>git config --local user.email "email"</span>
+                </div>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Defina seu <code>user.name</code> e <code>user.email</code> no projeto.
+            </p>
+          </article>
+
+          
+          <article class="roadmap-step-card">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge">ISOLAR</span>
+                <span class="roadmap-step-order">PASSO 03</span>
+              </div>
+              <h3 class="roadmap-step-title">Criar Branch</h3>
+              <div class="roadmap-cmd-snippet">
+                <span class="prompt">$</span>
+                <span>git switch -c fix-bug</span>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Isole a sua correção em uma nova linha de desenvolvimento.
+            </p>
+          </article>
+
+          
+          <article class="roadmap-step-card active-target">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge highlight">AÇÃO</span>
+                <span class="roadmap-step-order">PASSO 04</span>
+              </div>
+              <h3 class="roadmap-step-title">Corrigir Bug</h3>
+              <div class="roadmap-cmd-snippet">
+                <span class="prompt">★</span>
+                <span>apagar slide 13 no index.html</span>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Remova a section do bug identificado no código.
+            </p>
+          </article>
+
+          
+          <article class="roadmap-step-card">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge">PREPARAR</span>
+                <span class="roadmap-step-order">PASSO 05</span>
+              </div>
+              <h3 class="roadmap-step-title">Stage</h3>
+              <div class="roadmap-cmd-snippet">
+                <span class="prompt">$</span>
+                <span>git add index.html</span>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Prepara as alterações do arquivo corrigido para o commit.
+            </p>
+          </article>
+
+          
+          <article class="roadmap-step-card">
+            <div class="roadmap-step-top">
+              <div class="roadmap-step-header">
+                <span class="roadmap-step-badge">GRAVAR</span>
+                <span class="roadmap-step-order">PASSO 06</span>
+              </div>
+              <h3 class="roadmap-step-title">Commit</h3>
+              <div class="roadmap-cmd-snippet">
+                <span class="prompt">$</span>
+                <span>git commit -m "fix: ..."</span>
+              </div>
+            </div>
+            <p class="roadmap-step-desc">
+              Salva o snapshot definitivo da correção no histórico local.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      
+      <section class="slide" data-slide="15">
         <header class="slide-header">
           <h2 class="slide-heading">
             Autenticação: Criando o Token &amp; Push
@@ -2954,7 +2911,7 @@
         </header>
 
         <div class="token-slide-grid">
-          <!-- Coluna 1: Como gerar o token no GitHub -->
+          
           <article class="token-steps-card">
             <div class="action-header">
               <span class="action-step-badge">NO GITHUB</span>
@@ -3000,7 +2957,7 @@
             </div>
           </article>
 
-          <!-- Coluna 2: Terminal com o git push e autenticação -->
+          
           <article class="push-terminal-box">
             <div class="action-header">
               <span class="action-step-badge">NO TERMINAL</span>
@@ -3036,71 +2993,66 @@
         </div>
       </section>
 
-      <!-- Slide 15: Pull Request & Boas Práticas -->
-      <section class="slide" data-slide="15">
+      
+      <section class="slide" data-slide="16">
         <header class="slide-header">
-          <h2 class="slide-heading">Pull Request: Boas Práticas &amp; Revisão</h2>
+          <h2 class="slide-heading">Entrega: Abrindo o Pull Request (PR)</h2>
         </header>
 
         <div class="pr-slide-grid">
-          <!-- Coluna 1: O que é o PR e boas práticas -->
+          
           <article class="pr-flow-card">
             <div class="action-header">
-              <span class="action-step-badge">COLABORAÇÃO</span>
+              <span class="action-step-badge">FLUXO DE INTEGRAÇÃO</span>
+              <a
+                href="https://github.com/ViniciusMBotelho/minicurso-git-github/pulls"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="repo-link-btn"
+              >
+                Ver PRs ↗
+              </a>
             </div>
 
-            <div class="pr-guidelines">
-              <div class="pr-rule-item">
-                <span class="pr-rule-num">1</span>
-                <div>
-                  <span class="pr-rule-title">Título Claro e Descritivo</span>
-                  <span class="pr-rule-desc">Use convenções (ex: <code>fix: resolve quebra no checkout</code>). Evite títulos genéricos como "ajustes".</span>
-                </div>
-              </div>
-
-              <div class="pr-rule-item">
-                <span class="pr-rule-num">2</span>
-                <div>
-                  <span class="pr-rule-title">Contexto na Descrição</span>
-                  <span class="pr-rule-desc">Explique o <em>motivo</em> da alteração, o que foi resolvido e instruções para testar.</span>
-                </div>
-              </div>
-
-              <div class="pr-rule-item">
-                <span class="pr-rule-num">3</span>
-                <div>
-                  <span class="pr-rule-title">Revisão por Pares</span>
-                  <span class="pr-rule-desc">Colegas revisam o código, comentam melhorias e aprovam antes da mesclagem (merge).</span>
-                </div>
-              </div>
+            <div class="pr-branch-badge-row">
+              <span class="pr-branch-tag">seu-fork : main</span>
+              <span>→</span>
+              <span class="pr-branch-tag dest">repo-oficial : main</span>
             </div>
 
             <p class="story-footer-quote">
-              Um bom PR facilita a vida do revisor e acelera a entrega.
+              O <em>Pull Request</em> é o pedido formal para que o time revise e
+              incorpore sua solução ao código principal.
             </p>
           </article>
 
-          <!-- Coluna 2: Mock de abertura do PR no GitHub -->
-          <article class="pr-mock-card">
-            <div class="action-header">
-              <span class="action-step-badge">NO GITHUB</span>
+          
+          <article class="pr-ui-mockup">
+            <div class="pr-input-group">
+              <span class="pr-field-label"
+                >Título Semântico (O que foi feito?)</span
+              >
+              <div class="pr-title-box">
+                <em>fix:</em> remove slide com bug de renderização no checkout
+              </div>
             </div>
 
-            <div class="pr-form-mock">
-              <div class="pr-input-group">
-                <span class="pr-label">Título</span>
-                <div class="pr-input-mock">fix: remove slide do bug para estabilizar dev</div>
-              </div>
-
-              <div class="pr-input-group">
-                <span class="pr-label">Descrição (Markdown)</span>
-                <div class="pr-textarea-mock">
-                  <span class="pr-desc-head">### O que foi feito:</span>
-                  <span>- Removido o elemento do bug identificado no index.html</span>
-                  <span>- Validado o fluxo da apresentação</span>
-                  <span class="pr-desc-head" style="margin-top: 0.3rem;">### Como testar:</span>
-                  <span>- Navegar pelos slides até o final</span>
-                </div>
+            <div class="pr-input-group">
+              <span class="pr-field-label"
+                >Descrição Objetiva (Por que e como?)</span
+              >
+              <div class="pr-body-box">
+                <span class="pr-section-head">### Contexto</span>
+                <span
+                  >O slide 13 continha um erro visual que quebrava o
+                  fluxo.</span
+                >
+                <span class="pr-section-head" style="margin-top: 0.2rem"
+                  >### Solução</span
+                >
+                <span
+                  >Removida a section correspondente e validado o deck.</span
+                >
               </div>
             </div>
 
@@ -3122,8 +3074,8 @@
         </div>
       </section>
 
-      <!-- Slide 16: Obrigado & Encerramento -->
-      <section class="slide thanks-slide" data-slide="16">
+      
+      <section class="slide thanks-slide" data-slide="17">
         <div class="thanks-badge-row">
           <span class="badge badge-git">
             <span class="badge-dot"></span>
@@ -3234,7 +3186,6 @@
 
       updatePresentation();
 
-      // Alternância de abas no Slide 7 (git config)
       document.querySelectorAll(".config-tab-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           const targetTabId = btn.getAttribute("data-tab");
