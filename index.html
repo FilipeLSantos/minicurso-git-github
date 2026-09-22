@@ -1655,7 +1655,9 @@
         justify-content: space-between;
         gap: 0.85rem;
         min-height: 155px;
-        transition: transform 0.15s ease, border-color 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          border-color 0.15s ease;
       }
       .roadmap-step-card:hover {
         transform: translateY(-2px);
@@ -1663,7 +1665,11 @@
       }
       .roadmap-step-card.active-target {
         border-color: rgba(255, 87, 51, 0.45);
-        background: linear-gradient(180deg, rgba(255, 87, 51, 0.08) 0%, var(--surface) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 87, 51, 0.08) 0%,
+          var(--surface) 100%
+        );
       }
       .roadmap-step-top {
         display: flex;
@@ -1736,7 +1742,6 @@
     </div>
 
     <main class="presentation-container">
-      
       <section class="slide cover-slide active" data-slide="1">
         <div class="tag-container">
           <span class="badge badge-git">
@@ -1769,7 +1774,6 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="2">
         <header class="slide-header">
           <h2 class="slide-heading">Objetivos do Minicurso</h2>
@@ -1802,7 +1806,6 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="3">
         <header class="slide-header">
           <h2 class="slide-heading">Conteúdo Programático</h2>
@@ -1865,17 +1868,14 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="4">
         <header class="slide-header">
           <h2 class="slide-heading">Git × GitHub &amp; Primeiros Passos</h2>
         </header>
 
         <div class="visual-slide-grid">
-          
           <div class="metaphor-box">
             <div class="metaphor-diagram">
-              
               <div class="diagram-node">
                 <div class="node-icon-box">
                   <svg
@@ -1898,7 +1898,6 @@
                 <span class="node-metaphor-badge">Local</span>
               </div>
 
-              
               <div class="diagram-connector">
                 <svg
                   width="32"
@@ -1913,7 +1912,6 @@
                 </svg>
               </div>
 
-              
               <div class="diagram-node">
                 <div class="node-icon-box node-icon-github">
                   <svg
@@ -1937,7 +1935,6 @@
             </div>
           </div>
 
-          
           <aside class="google-auth-card">
             <div class="auth-title">
               <svg
@@ -2016,14 +2013,12 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="5">
         <header class="slide-header">
           <h2 class="slide-heading">Cenário: Seu Primeiro Dia na Empresa</h2>
         </header>
 
         <div class="story-hero-grid">
-          
           <article class="story-card">
             <div class="story-badge-row">
               <span class="story-pill">MISSÃO 01</span>
@@ -2054,7 +2049,6 @@
             </p>
           </article>
 
-          
           <article class="story-card">
             <div class="story-badge-row">
               <span class="story-pill alert">ALERTA</span>
@@ -2088,14 +2082,12 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="6">
         <header class="slide-header">
           <h2 class="slide-heading">Obtendo o Projeto: Fork &amp; Clone</h2>
         </header>
 
         <div class="fork-clone-grid">
-          
           <article class="fork-step-card">
             <div class="action-header">
               <span class="action-step-badge">PASSO 1 · NO GITHUB</span>
@@ -2141,7 +2133,6 @@
             </p>
           </article>
 
-          
           <article class="fork-step-card">
             <div class="action-header">
               <span class="action-step-badge">PASSO 2 · NO TERMINAL</span>
@@ -2177,7 +2168,6 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="7">
         <header class="slide-header">
           <h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
@@ -2201,10 +2191,8 @@
             </button>
           </nav>
 
-          
           <div class="config-tab-pane active" id="tab-config-identidade">
             <div class="config-slide-grid">
-              
               <article class="config-card">
                 <div class="action-header">
                   <span class="config-badge">COMANDOS NO REPOSITÓRIO</span>
@@ -2230,7 +2218,6 @@
                 </p>
               </article>
 
-              
               <article class="config-card">
                 <div class="action-header">
                   <span class="config-badge flag">ESCOPO DESTA PASTA</span>
@@ -2262,10 +2249,8 @@
             </div>
           </div>
 
-          
           <div class="config-tab-pane" id="tab-config-list">
             <div class="config-list-grid">
-              
               <div class="config-list-term">
                 <div class="terminal-header-dots">
                   <span class="term-dot red"></span>
@@ -2290,7 +2275,6 @@
                 </div>
               </div>
 
-              
               <div class="config-scopes-list">
                 <div class="config-scope-card">
                   <div class="config-scope-head">
@@ -2330,7 +2314,6 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="8">
         <header class="slide-header">
           <h2 class="slide-heading">
@@ -2339,7 +2322,6 @@
         </header>
 
         <div class="metaphor-full-grid">
-          
           <div class="metaphor-gallery">
             <div class="tree-photo-card">
               <div class="tree-photo-wrap">
@@ -2359,9 +2341,7 @@
             </div>
           </div>
 
-          
           <div class="metaphor-pillars-column">
-            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-leaf">
                 <svg
@@ -2388,7 +2368,6 @@
               </div>
             </div>
 
-            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-branch">
                 <svg
@@ -2413,7 +2392,6 @@
               </div>
             </div>
 
-            
             <div class="pillar-card">
               <div class="pillar-icon-box pillar-trunk">
                 <svg
@@ -2441,14 +2419,14 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="9">
         <header class="slide-header">
-          <h2 class="slide-heading">Branches na Prática: Comandos Essenciais</h2>
+          <h2 class="slide-heading">
+            Branches na Prática: Comandos Essenciais
+          </h2>
         </header>
 
         <div class="branch-cmds-grid">
-          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2461,11 +2439,11 @@
               </div>
             </div>
             <p class="handson-tagline">
-              Cria uma nova linha de desenvolvimento a partir do ponto atual sem sair de onde você está.
+              Cria uma nova linha de desenvolvimento a partir do ponto atual sem
+              sair de onde você está.
             </p>
           </article>
 
-          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2478,11 +2456,11 @@
               </div>
             </div>
             <p class="handson-tagline">
-              Muda para o ramo indicado. Também pode usar <code>git checkout minha-feature</code>.
+              Muda para o ramo indicado. Também pode usar
+              <code>git checkout minha-feature</code>.
             </p>
           </article>
 
-          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2495,11 +2473,11 @@
               </div>
             </div>
             <p class="handson-tagline">
-              Cria o ramo e já muda para ele em um único comando (ou <code>git checkout -b</code>).
+              Cria o ramo e já muda para ele em um único comando (ou
+              <code>git checkout -b</code>).
             </p>
           </article>
 
-          
           <article class="branch-cmd-card">
             <div class="handson-top">
               <div class="branch-badge-row">
@@ -2512,20 +2490,19 @@
               </div>
             </div>
             <p class="handson-tagline">
-              Lista todos os ramos locais e destaca com <strong>*</strong> em qual você está agora.
+              Lista todos os ramos locais e destaca com <strong>*</strong> em
+              qual você está agora.
             </p>
           </article>
         </div>
       </section>
 
-      
       <section class="slide" data-slide="10">
         <header class="slide-header">
           <h2 class="slide-heading">Inspeção: O Radar do Projeto</h2>
         </header>
 
         <div class="status-split-grid">
-          
           <article class="terminal-status-box">
             <div class="terminal-header-dots">
               <span class="term-dot red"></span>
@@ -2557,9 +2534,7 @@
             </div>
           </article>
 
-          
           <div class="status-states-column">
-            
             <div class="state-card">
               <span class="state-dot-indicator dot-untracked"></span>
               <div class="state-info">
@@ -2568,7 +2543,6 @@
               </div>
             </div>
 
-            
             <div class="state-card">
               <span class="state-dot-indicator dot-modified"></span>
               <div class="state-info">
@@ -2577,7 +2551,6 @@
               </div>
             </div>
 
-            
             <div class="state-card">
               <span class="state-dot-indicator dot-staged"></span>
               <div class="state-info">
@@ -2589,14 +2562,12 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="11">
         <header class="slide-header">
           <h2 class="slide-heading">Histórico: A Linha do Tempo</h2>
         </header>
 
         <div class="log-slide-grid">
-          
           <article class="terminal-log-box">
             <div class="terminal-header-dots">
               <span class="term-dot red"></span>
@@ -2610,7 +2581,6 @@
             </div>
 
             <div class="log-entries-list">
-              
               <div class="log-entry latest">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 8f2c31d</span>
@@ -2624,7 +2594,6 @@
                 >
               </div>
 
-              
               <div class="log-entry">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 4a91b2e</span>
@@ -2637,7 +2606,6 @@
                 >
               </div>
 
-              
               <div class="log-entry">
                 <div class="log-commit-line">
                   <span class="log-hash">commit 1b04c8f</span>
@@ -2652,21 +2620,17 @@
             </div>
           </article>
 
-          
           <div class="log-tools-column">
-            
             <div class="log-tool-card">
               <span class="tool-name">Resumo Compacto</span>
               <span class="tool-cmd-snippet">git log --oneline</span>
             </div>
 
-            
             <div class="log-tool-card">
               <span class="tool-name">Árvore Visual</span>
               <span class="tool-cmd-snippet">git log --graph --oneline</span>
             </div>
 
-            
             <div class="log-tool-card">
               <span class="tool-name">Últimos Commits</span>
               <span class="tool-cmd-snippet">git log -n 3</span>
@@ -2675,14 +2639,12 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="12">
         <header class="slide-header">
           <h2 class="slide-heading">Mão na Massa: Corrigindo o Bug</h2>
         </header>
 
         <div class="handson-grid">
-          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2700,7 +2662,6 @@
             </p>
           </article>
 
-          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2718,7 +2679,6 @@
             </p>
           </article>
 
-          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2736,7 +2696,6 @@
             </p>
           </article>
 
-          
           <article class="handson-card">
             <div class="handson-top">
               <div class="handson-badge-row">
@@ -2756,10 +2715,9 @@
         </div>
       </section>
 
-      
       <!-- [BUG DO PROJETO]: REMOVA ESTE SLIDE (SECTION) PARA CORRIGIR   -->
       <!-- Arquivo: index.html | Missão: Deletar, fazer git add e commit -->
-      
+
       <section class="slide" data-slide="13" id="bugSlide">
         <header class="slide-header" style="text-align: center">
           <h2 class="slide-heading">BUG ENCONTRADO!</h2>
@@ -2779,14 +2737,12 @@
       </section>
       <!-- =============================APAGUE ATE AQUI================================ -->
 
-      
       <section class="slide" data-slide="14">
         <header class="slide-header">
           <h2 class="slide-heading">Roadmap: O Caminho da Resolução</h2>
         </header>
 
         <div class="roadmap-grid-layout">
-          
           <article class="roadmap-step-card">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2804,7 +2760,6 @@
             </p>
           </article>
 
-          
           <article class="roadmap-step-card">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2824,11 +2779,11 @@
               </div>
             </div>
             <p class="roadmap-step-desc">
-              Defina seu <code>user.name</code> e <code>user.email</code> no projeto.
+              Defina seu <code>user.name</code> e <code>user.email</code> no
+              projeto.
             </p>
           </article>
 
-          
           <article class="roadmap-step-card">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2846,7 +2801,6 @@
             </p>
           </article>
 
-          
           <article class="roadmap-step-card active-target">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2864,7 +2818,6 @@
             </p>
           </article>
 
-          
           <article class="roadmap-step-card">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2882,7 +2835,6 @@
             </p>
           </article>
 
-          
           <article class="roadmap-step-card">
             <div class="roadmap-step-top">
               <div class="roadmap-step-header">
@@ -2902,7 +2854,6 @@
         </div>
       </section>
 
-      
       <section class="slide" data-slide="15">
         <header class="slide-header">
           <h2 class="slide-heading">
@@ -2911,7 +2862,6 @@
         </header>
 
         <div class="token-slide-grid">
-          
           <article class="token-steps-card">
             <div class="action-header">
               <span class="action-step-badge">NO GITHUB</span>
@@ -2928,36 +2878,49 @@
             <ul class="token-steps-list">
               <li>
                 <span class="token-step-num">1</span>
-                <span>Settings → Developer Settings → Personal access tokens → Tokens (classic)</span>
+                <span
+                  >Settings → Developer Settings → Personal access tokens →
+                  Tokens (classic)</span
+                >
               </li>
               <li>
                 <span class="token-step-num">2</span>
-                <span>Clique em <strong>Generate new token (classic)</strong></span>
+                <span
+                  >Clique em <strong>Generate new token (classic)</strong></span
+                >
               </li>
               <li>
                 <span class="token-step-num">3</span>
-                <span>Defina um nome no campo <em>Note</em> (ex: Minicurso Git)</span>
+                <span
+                  >Defina um nome no campo <em>Note</em> (ex: Minicurso
+                  Git)</span
+                >
               </li>
               <li>
                 <span class="token-step-num">4</span>
                 <span
                   >Marque o escopo:
-                  <code class="token-scope-tag">repo</code> (Acesso total a repositórios)</span
+                  <code class="token-scope-tag">repo</code> (Acesso total a
+                  repositórios)</span
                 >
               </li>
               <li>
                 <span class="token-step-num">5</span>
-                <span>Copie o token gerado (<code>ghp_...</code>). Guarde bem!</span>
+                <span
+                  >Copie o token gerado (<code>ghp_...</code>). Guarde
+                  bem!</span
+                >
               </li>
             </ul>
 
             <div class="token-alert-box">
               <span class="token-alert-icon">⚠</span>
-              <span>O token não será exibido novamente após sair da página.</span>
+              <span
+                >O token não será exibido novamente após sair da página.</span
+              >
             </div>
           </article>
 
-          
           <article class="push-terminal-box">
             <div class="action-header">
               <span class="action-step-badge">NO TERMINAL</span>
@@ -2977,7 +2940,8 @@
                 <span>ghp_seutokenaqui...</span>
               </div>
               <div class="push-highlight-line">
-                Cole o token no campo de senha (os caracteres não aparecem ao colar)
+                Cole o token no campo de senha (os caracteres não aparecem ao
+                colar)
               </div>
               <div class="push-success-line">
                 Enumerating objects: 5, done.<br />
@@ -2987,20 +2951,19 @@
             </div>
 
             <p class="story-footer-quote">
-              Pronto! Suas alterações estão salvas e publicadas no seu repositório remoto.
+              Pronto! Suas alterações estão salvas e publicadas no seu
+              repositório remoto.
             </p>
           </article>
         </div>
       </section>
 
-      
       <section class="slide" data-slide="16">
         <header class="slide-header">
           <h2 class="slide-heading">Entrega: Abrindo o Pull Request (PR)</h2>
         </header>
 
         <div class="pr-slide-grid">
-          
           <article class="pr-flow-card">
             <div class="action-header">
               <span class="action-step-badge">FLUXO DE INTEGRAÇÃO</span>
@@ -3026,7 +2989,6 @@
             </p>
           </article>
 
-          
           <article class="pr-ui-mockup">
             <div class="pr-input-group">
               <span class="pr-field-label"
@@ -3074,14 +3036,12 @@
         </div>
       </section>
 
-      
       <section class="slide thanks-slide" data-slide="17">
         <div class="thanks-badge-row">
           <span class="badge badge-git">
             <span class="badge-dot"></span>
             Fim do Minicurso
           </span>
-          <span class="badge">Q&amp;A</span>
         </div>
 
         <h2 class="thanks-title">Muito <em>Obrigado!</em></h2>
