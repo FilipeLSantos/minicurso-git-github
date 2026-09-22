@@ -1457,6 +1457,55 @@
       }
 
       /* Slide: Identidade & Configuração (git config) */
+      .config-tabs-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+      }
+
+      .config-tabs-nav {
+        display: flex;
+        gap: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+      }
+
+      .config-tab-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--text-muted);
+        font-family: var(--mono-font);
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      }
+
+      .config-tab-btn:hover {
+        color: var(--text-main);
+        background: var(--surface);
+      }
+
+      .config-tab-btn.active {
+        background: var(--surface);
+        border-color: var(--border);
+        color: #38bdf8;
+      }
+
+      .config-tab-pane {
+        display: none;
+      }
+
+      .config-tab-pane.active {
+        display: block;
+      }
+
       .config-slide-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1496,6 +1545,111 @@
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
+      }
+
+      .scope-info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .scope-item {
+        background: #080c14;
+        border: 1px solid #1f293d;
+        border-radius: 8px;
+        padding: 0.75rem 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .scope-target {
+        font-family: var(--mono-font);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #38bdf8;
+      }
+
+      .scope-text {
+        font-size: 0.84rem;
+        color: var(--text-muted);
+        line-height: 1.45;
+        margin: 0;
+      }
+
+      .scope-text code {
+        color: #f1f5f9;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+        font-family: var(--mono-font);
+        font-size: 0.8rem;
+      }
+
+      .config-list-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+
+      .config-list-term {
+        background: #080c14;
+        border: 1px solid #1f293d;
+        border-radius: 12px;
+        padding: 1.25rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        font-family: var(--mono-font);
+      }
+
+      .config-list-output {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        color: #94a3b8;
+      }
+
+      .config-list-output strong {
+        color: #f1f5f9;
+      }
+
+      .config-scopes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        justify-content: space-between;
+      }
+
+      .config-scope-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .config-scope-head {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .config-scope-title {
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #f1f5f9;
+      }
+
+      .config-scope-desc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.4;
       }
 
       /* Slide 14: Pull Request & Boas Práticas */
@@ -2139,52 +2293,128 @@
           <h2 class="slide-heading">Configuração: Sua Identidade no Git</h2>
         </header>
 
-        <div class="config-slide-grid">
-          <!-- Card 1: Definindo Nome e Email -->
-          <article class="config-card">
-            <div class="action-header">
-              <span class="config-badge">ASSINATURA DOS COMMITS</span>
+        <div class="config-tabs-container">
+          <nav class="config-tabs-nav" aria-label="Abas de configuração do Git">
+            <button class="config-tab-btn active" data-tab="tab-config-identidade" type="button">
+              <span>01. Identidade Local</span>
+            </button>
+            <button class="config-tab-btn" data-tab="tab-config-list" type="button">
+              <span>02. Inspecionar (git config --list)</span>
+            </button>
+          </nav>
+
+          <!-- Aba 1: Configuração Local -->
+          <div class="config-tab-pane active" id="tab-config-identidade">
+            <div class="config-slide-grid">
+              <!-- Card: Definindo Nome e Email com --local -->
+              <article class="config-card">
+                <div class="action-header">
+                  <span class="config-badge">COMANDOS NO REPOSITÓRIO</span>
+                </div>
+
+                <div class="config-cmds-box">
+                  <div class="term-cmd">
+                    <span class="term-prompt">$</span>
+                    <span>git config --local user.name "Seu Nome"</span>
+                  </div>
+                  <div class="term-cmd">
+                    <span class="term-prompt">$</span>
+                    <span>git config --local user.email "iniciais@aluno.ifnmg.edu.br"</span>
+                  </div>
+                </div>
+
+                <p class="story-footer-quote">
+                  Todo commit gravado no Git carrega o <em>autor</em> e o
+                  <em>e-mail</em> de quem fez a alteração.
+                </p>
+              </article>
+
+              <!-- Card: Por que usar --local -->
+              <article class="config-card">
+                <div class="action-header">
+                  <span class="config-badge flag">ESCOPO DESTA PASTA</span>
+                </div>
+
+                <div class="scope-info-box">
+                  <div class="scope-item">
+                    <span class="scope-target">--local (Padrão do Lab)</span>
+                    <p class="scope-text">
+                      Salva em <code>.git/config</code>. Garante que seu nome e e-mail fiquem vinculados apenas a este repositório sem alterar o restante da máquina.
+                    </p>
+                  </div>
+                  <div class="scope-item">
+                    <span class="scope-target">--global (Sua Máquina)</span>
+                    <p class="scope-text">
+                      Salva em <code>~/.gitconfig</code>. Aplica para todos os repositórios do seu usuário no computador pessoal.
+                    </p>
+                  </div>
+                </div>
+
+                <p class="story-footer-quote">
+                  Em computadores compartilhados ou de laboratório, configure sempre com <code>--local</code>.
+                </p>
+              </article>
             </div>
+          </div>
 
-            <div class="config-cmds-box">
-              <div class="term-cmd">
-                <span class="term-prompt">$</span>
-                <span>git config user.name "Seu Nome"</span>
+          <!-- Aba 2: Inspeção e Escopos com git config --list -->
+          <div class="config-tab-pane" id="tab-config-list">
+            <div class="config-list-grid">
+              <!-- Terminal simulando a saída de git config --list -->
+              <div class="config-list-term">
+                <div class="terminal-header-dots">
+                  <span class="term-dot red"></span>
+                  <span class="term-dot yellow"></span>
+                  <span class="term-dot green"></span>
+                </div>
+                <div class="term-cmd">
+                  <span class="term-prompt">$</span>
+                  <span>git config --list</span>
+                </div>
+                <div class="config-list-output">
+                  <span>core.repositoryformatversion=0</span>
+                  <span>core.filemode=true</span>
+                  <span>core.bare=false</span>
+                  <span>remote.origin.url=https://github.com/...</span>
+                  <span><strong>user.name=Seu Nome</strong></span>
+                  <span><strong>user.email=iniciais@aluno.ifnmg.edu.br</strong></span>
+                </div>
               </div>
-              <div class="term-cmd">
-                <span class="term-prompt">$</span>
-                <span>git config user.email "iniciais@aluno.ifnmg.edu.br"</span>
+
+              <!-- Escopos e precedência -->
+              <div class="config-scopes-list">
+                <div class="config-scope-card">
+                  <div class="config-scope-head">
+                    <span class="config-badge">--local</span>
+                    <span class="config-scope-title">Repositório Atual</span>
+                  </div>
+                  <span class="config-scope-desc">
+                    Gravado em <code>.git/config</code>. Tem a maior prioridade e sobrepõe os demais.
+                  </span>
+                </div>
+
+                <div class="config-scope-card">
+                  <div class="config-scope-head">
+                    <span class="config-badge">--global</span>
+                    <span class="config-scope-title">Usuário do Sistema</span>
+                  </div>
+                  <span class="config-scope-desc">
+                    Gravado em <code>~/.gitconfig</code>. Usado se não houver definição local.
+                  </span>
+                </div>
+
+                <div class="config-scope-card">
+                  <div class="config-scope-head">
+                    <span class="config-badge">--system</span>
+                    <span class="config-scope-title">Toda a Máquina</span>
+                  </div>
+                  <span class="config-scope-desc">
+                    Gravado em <code>/etc/gitconfig</code>. Padrão para todos os usuários do SO.
+                  </span>
+                </div>
               </div>
             </div>
-
-            <p class="story-footer-quote">
-              Todo commit gravado no Git carrega o <em>autor</em> e o
-              <em>e-mail</em> de quem fez a alteração.
-            </p>
-          </article>
-
-          <!-- Card 2: Escopo Local vs Global & Checagem -->
-          <article class="config-card">
-            <div class="action-header">
-              <span class="config-badge flag">ESCOPO &amp; CONFERÊNCIA</span>
-            </div>
-
-            <div class="config-cmds-box">
-              <div class="term-cmd">
-                <span class="term-prompt">$</span>
-                <span>git config --local user.email "..."</span>
-              </div>
-              <div class="term-cmd">
-                <span class="term-prompt">$</span>
-                <span>git config --list</span>
-              </div>
-            </div>
-
-            <p class="story-footer-quote">
-              Use <code>--local</code> para configurar apenas este projeto, ou
-              liste tudo com <em>git config --list</em>.
-            </p>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -2803,9 +3033,21 @@
         } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
           prevSlide();
         }
-      });
-
       updatePresentation();
+
+      // Alternância de abas no Slide 7 (git config)
+      document.querySelectorAll(".config-tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetTabId = btn.getAttribute("data-tab");
+          document.querySelectorAll(".config-tab-btn").forEach((b) => b.classList.remove("active"));
+          document.querySelectorAll(".config-tab-pane").forEach((pane) => pane.classList.remove("active"));
+          btn.classList.add("active");
+          const targetPane = document.getElementById(targetTabId);
+          if (targetPane) {
+            targetPane.classList.add("active");
+          }
+        });
+      });
     </script>
   </body>
 </html>
